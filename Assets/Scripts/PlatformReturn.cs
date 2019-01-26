@@ -17,7 +17,7 @@ public class PlatformReturn : MonoBehaviour
         if (Hazard.tag == "Hazard")
         {
             Debug.Log("This string should run");
-            this.transform.position = new Vector3(LastPlatformTouched.x, LastPlatformTouched.y, LastPlatformTouched.z);
+            this.transform.position = new Vector3(LastPlatformTouched.x, LastPlatformTouched.y + 10f, LastPlatformTouched.z);
        
         }
     }
