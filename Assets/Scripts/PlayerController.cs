@@ -7,19 +7,18 @@ public class PlayerController : MonoBehaviour
 
     public Rigidbody player;
     public Camera camera;
-    public Transform cameraRotator;
-    public float camShift = 50;
-    public float camSpeed = 100;
-    public float epsilon = 0.05f;
-    public float playerCamMatch = 1;
-    public float jumpForce = 2;
-    public float SpecialJumpForce = 5;
-    public float moveSpeed = 2;
+    public float camShift;
+    public float camSpeed;
+    public float playerCamMatch;
+    public float jumpForce;
+    public float SpecialJumpForce;
+    public float moveSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        //player.transform.position = Vector3.zero;
+        //camera.transform.position = CamPos(player);
     }
 
     // Update is called once per frame
@@ -37,69 +36,68 @@ public class PlayerController : MonoBehaviour
         if (jump)
         {
             //Debug.Log("jump");
-            Vector3 velocity = Vector3.up * jumpForce * Time.deltaTime;
-            player.transform.position = player.transform.position + velocity;
+            Vector3 velocity = Vector3.up * jumpForce;
+            player.transform.position = player.transform.position + velocity * Time.deltaTime;
         }
         if (moveVertical != 0.0f)
         {
             //Debug.Log("vertical: "+moveVertical);
-            Vector3 velocity = Vector3.forward * moveVertical * moveSpeed * Time.deltaTime;
-            player.transform.position = player.transform.position + velocity;
+            Vector3 velocity = Vector3.forward * moveVertical * moveSpeed;
+            player.transform.position = player.transform.position + velocity * Time.deltaTime;
         }
         if (moveHorizontal != 0.0f)
         {
             //Debug.Log("horizontal: "+moveHorizontal);
-            Vector3 velocity = Vector3.right * moveHorizontal * moveSpeed * Time.deltaTime;
-            player.transform.position = player.transform.position + velocity;
+            Vector3 velocity = Vector3.right * moveHorizontal * moveSpeed;
+            player.transform.position = player.transform.position + velocity * Time.deltaTime;
         }
         if (special_jump)
         {
             //Debug.Log("special_jump");
-            Vector3 velocity = Vector3.up * SpecialJumpForce * Time.deltaTime;
-            player.transform.position = player.transform.position + velocity;
+            Vector3 velocity = Vector3.up * SpecialJumpForce;
+            player.transform.position = player.transform.position + velocity * Time.deltaTime;
         }
-        if (!CamInRange(camX))
+        if (camX != 0.0f)
         {
-            //Debug.Log("move & rotate cam: " + camX);
-            Vector3 velocity = Vector3.down * camX * camSpeed * Time.deltaTime;
-            //cameraRotator.transform.rotation = cameraRotator.transform.rotation + Quaternion.Euler(velocity);
-            cameraRotator.transform.Rotate(velocity);
+            Debug.Log("move & rotate cam: " + camX);
+            //Vector3 velocity = Vector3.zero + CamPos(player);
+            //camera.transform.position = camera.transform.position + velocity * Time.deltaTime;
+            camera.transform.LookAt(player.transform);
         }
-        if (CamInRange(camX) && !CamMatchesPlayer())
+        if (camX == 0 && !CamMatchesPlayer())
         {
-            //Debug.Log("resetting camera...");
-            Vector3 velocity;
-            float y = cameraRotator.transform.rotation.eulerAngles.y;
-            //Debug.Log(cameraRotator.transform.rotation.eulerAngles.y);
-
-            if (y < 180.0f)
-                velocity = Vector3.down * camShift * Time.deltaTime;
-            else
-                velocity = Vector3.up * camShift * Time.deltaTime;
-
-            cameraRotator.transform.Rotate(velocity);
+            Debug.Log("resetting camera...");
+            //Vector3 velocity = Vector3.zero + CamPos(player, true);
+            //camera.transform.position = camera.transform.position + velocity * Time.deltaTime;
         }
-
-        camera.transform.LookAt(player.transform);
-
-    }
-
-    bool CamInRange(float x)
-    {
-        return x < epsilon && x > -epsilon;
     }
 
     bool CamMatchesPlayer()
     {
-        Vector3 camRot = cameraRotator.transform.rotation.eulerAngles;
+        Vector3 camRot = camera.transform.rotation.eulerAngles;
         Vector3 playerRot = player.transform.rotation.eulerAngles;
 
         if (Mathf.Abs(camRot.y - playerRot.y) < playerCamMatch)
         {
-            //Debug.Log("y rotation matches");
+            //Debug.Log("y rot");
             return true;
         }
-        //Debug.Log("y rotation doesn't match");
+
         return false;
+    }
+
+    Vector3 CamPos(Rigidbody player, bool reset = false)
+    {
+        //camera.transform.position 
+
+        if (reset)
+        {
+            Debug.Log("resetting camera");
+        }
+        else
+        {
+            Debug.Log("moving camera");
+        }
+        return Vector3.zero;
     }
 }

@@ -5,10 +5,12 @@ using UnityEngine;
 public class Platform : MonoBehaviour
 {
     private Renderer _r;
-    public float _fadeinspeed = 25f;
-    public Platform last;
-    public Platform next;
+    public Collider _trigger;
+    public float _startingdistance = 20f;
+    public AnimationCurve animationCurve;
+    public float _fadeintime = 1.5f;
     public GameObject _model;
+    public bool triggered = false;
     // Start is called before the first frame update
 
     void Update()
@@ -22,29 +24,43 @@ public class Platform : MonoBehaviour
 
     void Awake()
     {
+        // set the child _model's meshrenderer to transparent and disable it
         _r = _model.GetComponent<MeshRenderer>();
         _r.material.color = Color.clear;
         _r.enabled = false;
-        // Move the platform model down 
-        _model.transform.position = new Vector3(transform.position.x, transform.position.y - 50, transform.position.z);
+        // Move the platform model down by _startingdistance
+        _model.transform.position = new Vector3(transform.position.x, transform.position.y - _startingdistance, transform.position.z);
+    }
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player" && !triggered)
+        {
+            triggered = true;
+            Trigger();
+        }
     }
     void Trigger()
     {
         Debug.Log("Platform fading in...");
         _model.GetComponent<MeshRenderer>().enabled = true;
-        StartCoroutine(FadeIn());
+        StartCoroutine(FadeIn(_model.transform.position, transform.position));
     }
 
     // Move the model up to the position of the collider, and gradually increase transparency of the mesh as you go
-    public IEnumerator FadeIn()
+    public IEnumerator FadeIn(Vector3 start, Vector3 end)
     {
-        while( _model.transform.position != transform.position)
+        float journey = 0f;
+        while(journey <= _fadeintime)
         {
-            _r.material.color = Color.Lerp(Color.clear, Color.white, _fadeinspeed * Time.deltaTime);
-            _model.transform.position = Vector3.MoveTowards(_model.transform.position, transform.position, _fadeinspeed * Time.deltaTime);
-            yield return new WaitForEndOfFrame();
+            journey = journey + Time.deltaTime;
+            float percent = Mathf.Clamp01(journey / _fadeintime);
+            float curvedPercent = animationCurve.Evaluate(percent);
+
+            _model.transform.position = Vector3.LerpUnclamped(start, end, curvedPercent);
+
+            _r.material.color = Color.LerpUnclamped(Color.clear, Color.white, curvedPercent);
+            yield return null;
         }
-        Debug.Log("Finished moving ... ");
     }
     
 }
