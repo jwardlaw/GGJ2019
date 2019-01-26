@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player.transform.position = Vector3.zero;
+        //player.transform.position = Vector3.zero;
         //camera.transform.position = CamPos(player);
     }
 
