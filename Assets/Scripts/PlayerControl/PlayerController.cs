@@ -41,8 +41,11 @@ public class PlayerController : MonoBehaviour
 
         if (IsOnGround())
         {
-            yVelocity = 0.0f;
-
+            if (yVelocity < 0.0f)
+            {
+                yVelocity = 0.0f;
+            }
+            
             if (jump)
             {
                 //Debug.Log("jump");
