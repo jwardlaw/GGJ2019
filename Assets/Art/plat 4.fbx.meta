@@ -1,46 +1,14 @@
 fileFormatVersion: 2
-guid: 89cad67bb7023eb48969a4bba4b8c4e0
+guid: 22e5b2a704ddab141b019705b414b0ee
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: pCube1
-    100002: pCube2
-    100004: //RootNode
-    100006: pPrism1
-    100008: pPyramid1
-    100010: pSolid1
-    100012: pSolid2
-    100014: pSphere1
-    400000: pCube1
-    400002: pCube2
-    400004: //RootNode
-    400006: pPrism1
-    400008: pPyramid1
-    400010: pSolid1
-    400012: pSolid2
-    400014: pSphere1
+    100000: //RootNode
+    400000: //RootNode
     2100000: lambert1
-    2300000: pCube1
-    2300002: pCube2
-    2300004: pPrism1
-    2300006: pPyramid1
-    2300008: pSolid1
-    2300010: pSolid2
-    2300012: pSphere1
-    3300000: pCube1
-    3300002: pCube2
-    3300004: pPrism1
-    3300006: pPyramid1
-    3300008: pSolid1
-    3300010: pSolid2
-    3300012: pSphere1
-    4300000: pCube1
-    4300002: pPrism1
-    4300004: pPyramid1
-    4300006: pSolid1
-    4300008: pSolid2
-    4300010: pSphere1
-    4300012: pCube2
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pPrism1
   externalObjects: {}
   materials:
     importMaterials: 1
