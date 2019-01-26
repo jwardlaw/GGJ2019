@@ -8,7 +8,7 @@ public class Platform : MonoBehaviour
     public Collider _trigger;
     public float _startingdistance = 20f;
     public AnimationCurve animationCurve;
-    public float _fadeintime = 1.5f;
+    public float _fadeintime = 1f;
     public GameObject _model;
     public bool triggered = false;
     // Start is called before the first frame update
