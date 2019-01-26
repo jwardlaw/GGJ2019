@@ -11,6 +11,7 @@ public class CoinPickup : MonoBehaviour
     {
         GlobalCoins.TotalCoins += 1;
         Coin.GetComponent<Renderer>().enabled = false;
+        Coin.GetComponent<BoxCollider>().enabled = false;
         transform.GetChild(0).gameObject.SetActive(true);
         //this.gameObject.SetActive(false);
     }
