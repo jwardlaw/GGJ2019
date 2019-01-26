@@ -12,9 +12,14 @@ public class PlayerController : MonoBehaviour
     public float camSpeed = 100;
     public float epsilon = 0.05f;
     public float playerCamMatch = 1;
-    public float jumpForce = 2;
-    public float SpecialJumpForce = 5;
+    public float jumpVelocity;
+    public float specialJumpVelocity;
     public float moveSpeed = 2;
+    public int onGround = 0;
+
+    public float yVelocity = 0.0f;
+    public float maxGravityDecay = 0.3f;
+    public float gravityDecayRate = 0.1f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +30,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool jump = Input.GetButton("Jump");
-        bool special_jump = Input.GetButton("Special Jump");
+        bool jump = Input.GetButtonDown("Jump");
+        bool special_jump = Input.GetButtonDown("Special Jump");
 
         float moveVertical = Input.GetAxis("Vertical");
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -34,12 +39,31 @@ public class PlayerController : MonoBehaviour
         float camX = Input.GetAxis("CamX");
         //float camY = Input.GetAxis("CamY");
 
-        if (jump)
+        if (IsOnGround())
         {
-            //Debug.Log("jump");
-            Vector3 velocity = Vector3.up * jumpForce * Time.deltaTime;
-            player.transform.position = player.transform.position + velocity;
+            yVelocity = 0.0f;
+
+            if (jump)
+            {
+                //Debug.Log("jump");
+                yVelocity += jumpVelocity;
+            }
+            else if (special_jump)
+            {
+                //Debug.Log("special_jump");
+                yVelocity += specialJumpVelocity;
+            }
         }
+        else
+        {
+            if (yVelocity > 0 || -yVelocity < maxGravityDecay)
+            {
+                yVelocity = Mathf.Max(yVelocity - gravityDecayRate * Time.deltaTime, -maxGravityDecay);
+            }
+        }
+
+        transform.Translate(new Vector3(0.0f, yVelocity, 0.0f));
+
         if (moveVertical != 0.0f)
         {
             //Debug.Log("vertical: "+moveVertical);
@@ -50,12 +74,6 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("horizontal: "+moveHorizontal);
             Vector3 velocity = Vector3.right * moveHorizontal * moveSpeed * Time.deltaTime;
-            player.transform.position = player.transform.position + velocity;
-        }
-        if (special_jump)
-        {
-            //Debug.Log("special_jump");
-            Vector3 velocity = Vector3.up * SpecialJumpForce * Time.deltaTime;
             player.transform.position = player.transform.position + velocity;
         }
         if (!CamInRange(camX))
@@ -101,5 +119,26 @@ public class PlayerController : MonoBehaviour
         }
         //Debug.Log("y rotation doesn't match");
         return false;
+    }
+
+    public bool IsOnGround()
+    {
+        return onGround > 0;
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            onGround++;
+        }
+    }
+
+    public void OnCollisionExit(Collision collision)
+    { 
+        if (collision.gameObject.tag == "Ground")
+        {
+            onGround--;
+        }
     }
 }
