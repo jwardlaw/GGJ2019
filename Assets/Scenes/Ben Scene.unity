@@ -248,7 +248,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.3
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -289,28 +289,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &579992319 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3577186068926138731, guid: 2d08885e6be40ee499bdfe50c38c2377,
-    type: 3}
-  m_PrefabInstance: {fileID: 1064428268}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &579992321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579992319}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b5df51ee249e964398c5f5806521157, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DissolveEffectTemplate: {fileID: 3548653025868513605, guid: e961c4d98c45a354ea5ef2ed428ed2cb,
-    type: 3}
-  dissolveObject: {fileID: 0}
-  durationRemaing: 0
 --- !u!1001 &1064428268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -378,45 +356,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3577186069118525793, guid: 2d08885e6be40ee499bdfe50c38c2377,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577186069118525793, guid: 2d08885e6be40ee499bdfe50c38c2377,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577186069118525793, guid: 2d08885e6be40ee499bdfe50c38c2377,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
         type: 3}
-      propertyPath: gravityDecay
+      propertyPath: camShift
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
         type: 3}
-      propertyPath: jumpVelocity
-      value: 0.1
+      propertyPath: moveSpeed
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
         type: 3}
-      propertyPath: maxGravityDecay
-      value: 0.4
+      propertyPath: jumpVelocityIncrease
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
         type: 3}
-      propertyPath: gravityDecayRate
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
-        type: 3}
-      propertyPath: specialJumpVelocity
-      value: 0.2
+      propertyPath: jumpVelocityIncreaseDecay
+      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d08885e6be40ee499bdfe50c38c2377, type: 3}
