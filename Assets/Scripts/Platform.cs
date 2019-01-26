@@ -32,7 +32,7 @@ public class Platform : MonoBehaviour
     }
     void Trigger()
     {
-        Debug.Log("Platform fading in...");
+        //Debug.Log("Platform fading in...");
         _model.GetComponent<MeshRenderer>().enabled = true;
         StartCoroutine(FadeIn(_model.transform.position, transform.position));
     }
