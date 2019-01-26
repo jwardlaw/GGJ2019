@@ -358,23 +358,62 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
         type: 3}
-      propertyPath: camShift
-      value: 0
+      propertyPath: moveVelocity
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
         type: 3}
-      propertyPath: moveSpeed
-      value: 4
+      propertyPath: maxMoveSpeed
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
         type: 3}
-      propertyPath: jumpVelocityIncrease
-      value: 0.06
+      propertyPath: baseMoveSpeed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
         type: 3}
-      propertyPath: jumpVelocityIncreaseDecay
-      value: 0.02
+      propertyPath: moveAcceleration
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
+        type: 3}
+      propertyPath: moveAccelerationAirFactor
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
+        type: 3}
+      propertyPath: maxGravityDecay
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
+        type: 3}
+      propertyPath: gravityDecayRate
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d08885e6be40ee499bdfe50c38c2377, type: 3}
+--- !u!1 &1597869591 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3577186068926138731, guid: 2d08885e6be40ee499bdfe50c38c2377,
+    type: 3}
+  m_PrefabInstance: {fileID: 1064428268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1597869596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597869591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad51bfff60d1e924a80d54f4f4f5ea9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomDistances:
+  - 6
+  - 8
+  - 12
+  - 15
+  currentZoomLevel: 0
