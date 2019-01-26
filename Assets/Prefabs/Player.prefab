@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3577186068926138729}
   - component: {fileID: 3577186068926138728}
   - component: {fileID: 579992321}
+  - component: {fileID: 1597869596}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -130,6 +131,24 @@ MonoBehaviour:
     type: 3}
   dissolveObject: {fileID: 0}
   durationRemaing: 0
+--- !u!114 &1597869596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3577186068926138731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad51bfff60d1e924a80d54f4f4f5ea9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomDistances:
+  - 6
+  - 8
+  - 12
+  - 15
+  currentZoomLevel: 0
 --- !u!1 &3577186069118525799
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,11 +284,17 @@ MonoBehaviour:
   jumpVelocityIncreaseDecay: 0.02
   currentJumpVelocityIncrease: 0
   specialJumpVelocity: 0.2
-  moveSpeed: 4
+  baseMoveSpeed: 0.05
+  moveAcceleration: 0.1
+  maxMoveSpeed: 0.15
+  currentSpeed: 0
   onGround: 0
   yVelocity: 0
-  maxGravityDecay: 0.4
-  gravityDecayRate: 0.15
+  velocity: {x: 0, y: 0, z: 0}
+  maxGravityDecay: 0.6
+  gravityDecayRate: 0.25
+  moveAccelerationAirFactor: 0.5
+  previousDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &6036333041976721720
 MonoBehaviour:
   m_ObjectHideFlags: 0
