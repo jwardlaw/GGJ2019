@@ -13,15 +13,6 @@ public class Platform : MonoBehaviour
     public bool triggered = false;
     // Start is called before the first frame update
 
-    void Update()
-    {
-        // REPLACE ME
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Trigger();
-        }
-    }
-
     void Awake()
     {
         // set the child _model's meshrenderer to transparent and disable it
