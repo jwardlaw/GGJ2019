@@ -57,28 +57,29 @@ public class PlayerController : MonoBehaviour
             Vector3 velocity = Vector3.up * SpecialJumpForce;
             player.transform.position = player.transform.position + velocity * Time.deltaTime;
         }
-        /*if (camX != 0.0f || moveHorizontal != 0.0f || moveVertical != 0.0f)
+        if (camX != 0.0f)
         {
             Debug.Log("move & rotate cam: " + camX);
-            Vector3 velocity = Vector3.zero + CamPos(player);
-            camera.transform.position = camera.transform.position + velocity * Time.deltaTime;
+            //Vector3 velocity = Vector3.zero + CamPos(player);
+            //camera.transform.position = camera.transform.position + velocity * Time.deltaTime;
+            camera.transform.LookAt(player.transform);
         }
         if (camX == 0 && !CamMatchesPlayer())
         {
             Debug.Log("resetting camera...");
-            Vector3 velocity = Vector3.zero + CamPos(player, true);
-            camera.transform.position = camera.transform.position + velocity * Time.deltaTime;
-        }*/
+            //Vector3 velocity = Vector3.zero + CamPos(player, true);
+            //camera.transform.position = camera.transform.position + velocity * Time.deltaTime;
+        }
     }
 
-    /*bool CamMatchesPlayer()
+    bool CamMatchesPlayer()
     {
         Vector3 camRot = camera.transform.rotation.eulerAngles;
         Vector3 playerRot = player.transform.rotation.eulerAngles;
 
         if (Mathf.Abs(camRot.y - playerRot.y) < playerCamMatch)
         {
-            Debug.Log("y rot");
+            //Debug.Log("y rot");
             return true;
         }
 
@@ -98,5 +99,5 @@ public class PlayerController : MonoBehaviour
             Debug.Log("moving camera");
         }
         return Vector3.zero;
-    }*/
+    }
 }
