@@ -5,9 +5,13 @@ using UnityEngine;
 public class Reset : MonoBehaviour
 {
     // Start is called before the first frame update
-    void OnTriggerEnter(Collider other);
+    void OnTriggerEnter(Collider other)
     {
-        
+        if(other.tag == "Player")
+        {
+            PlatformReturn.LastPlatformTouched = this.transform.position;
+
+        }
     }
 
     // Update is called once per frame
