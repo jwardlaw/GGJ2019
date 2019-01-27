@@ -18,6 +18,7 @@ public class PauseSystem : MonoBehaviour
         Controls,
         Credits,
         Exit,
+        Quit,
         NUMBER_OF_PAUSE_OPTIONS
     }
 
@@ -104,6 +105,9 @@ public class PauseSystem : MonoBehaviour
                     case PauseOption.Exit:
                         Time.timeScale = 1f;
                         SceneManager.LoadScene("Title");
+                        break;
+                    case PauseOption.Quit:
+                        Application.Quit();
                         break;
                     default:
                         break;
