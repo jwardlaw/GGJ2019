@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5d06bee294c4214478ae09b974edd69b
+guid: 1a7f106577b45484b882e499395d206d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -85,7 +85,7 @@ ModelImporter:
     4300012: pCube2
     4300014: pCube4
     4300016: pCube6
-    7400000: mixamo.com
+    7400000: Running (1)
     9500000: //RootNode
     13700000: pCube1
     13700002: pCube2
@@ -123,7 +123,49 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Running (1)
+      takeName: mixamo.com
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.16703297
+        functionName: OnLeftFootDown
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.6703297
+        functionName: OnRightFootDown
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

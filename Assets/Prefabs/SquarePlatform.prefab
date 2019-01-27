@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trigger: {fileID: 0}
-  _startingdistance: 20
+  _startingdistance: 15
   animationCurve:
     serializedVersion: 2
     m_Curve:
@@ -82,7 +82,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _fadeintime: 1
+  _fadeintime: 0.5
   _model: {fileID: 5737207300628403917}
   triggered: 0
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}

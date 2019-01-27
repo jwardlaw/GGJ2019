@@ -11,7 +11,7 @@ public class PlatformReturn : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider Hazard)
     {
-        if (Hazard.tag == "Hazard")
+        if (Hazard.tag == "Hazard" && LastPlatformTouched != null)
         {
             //Debug.Log("This string should run");
             transform.position = new Vector3(LastPlatformTouched.position.x, 

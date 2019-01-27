@@ -452,7 +452,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 122
   m_CollisionDetection: 0
 --- !u!114 &3577186069118525792
 MonoBehaviour:
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stepSound: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
-  jumpSound: {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  jumpSound: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
   highJumpSound: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
   longJumpSound: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
   audio: {fileID: 1844350013554157967}
@@ -622,6 +622,104 @@ MonoBehaviour:
   _pc: {fileID: 3577186069118525792}
   _rb: {fileID: 0}
   _anim: {fileID: 4919912816448921170}
+  _audio: {fileID: 0}
+  _clips: []
+--- !u!82 &8713264132051579917
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919912816456314324}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5a9383dda6cabc047b7a297602e93eb4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 1
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &4919912816456280882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -725,18 +823,30 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 4919912816456151476}
-    - target: {fileID: 13700016, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+    - target: {fileID: 13700000, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
       propertyPath: m_Bones.Array.data[0]
       value: 
       objectReference: {fileID: 4919912816456151464}
-    - target: {fileID: 13700016, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+    - target: {fileID: 13700000, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
       propertyPath: m_Bones.Array.data[1]
       value: 
       objectReference: {fileID: 4919912816456151472}
-    - target: {fileID: 13700016, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+    - target: {fileID: 13700000, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+      propertyPath: m_Bones.Array.data[2]
+      value: 
+      objectReference: {fileID: 4919912816456151424}
+    - target: {fileID: 13700000, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+      propertyPath: m_Bones.Array.data[3]
+      value: 
+      objectReference: {fileID: 4919912816456151456}
+    - target: {fileID: 13700000, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+      propertyPath: m_Bones.Array.data[4]
+      value: 
+      objectReference: {fileID: 4919912816456151444}
+    - target: {fileID: 13700000, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
       propertyPath: m_RootBone
       value: 
-      objectReference: {fileID: 4919912816456151464}
+      objectReference: {fileID: 4919912816456151424}
     - target: {fileID: 13700002, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
       propertyPath: m_Bones.Array.data[0]
       value: 
@@ -762,58 +872,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4919912816456151426}
     - target: {fileID: 13700002, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
-      propertyPath: m_RootBone
-      value: 
-      objectReference: {fileID: 4919912816456151426}
-    - target: {fileID: 13700000, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
-      propertyPath: m_Bones.Array.data[0]
-      value: 
-      objectReference: {fileID: 4919912816456151464}
-    - target: {fileID: 13700000, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
-      propertyPath: m_Bones.Array.data[1]
-      value: 
-      objectReference: {fileID: 4919912816456151472}
-    - target: {fileID: 13700000, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
-      propertyPath: m_Bones.Array.data[2]
-      value: 
-      objectReference: {fileID: 4919912816456151424}
-    - target: {fileID: 13700000, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
-      propertyPath: m_Bones.Array.data[3]
-      value: 
-      objectReference: {fileID: 4919912816456151456}
-    - target: {fileID: 13700000, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
-      propertyPath: m_Bones.Array.data[4]
-      value: 
-      objectReference: {fileID: 4919912816456151444}
-    - target: {fileID: 13700000, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
-      propertyPath: m_RootBone
-      value: 
-      objectReference: {fileID: 4919912816456151424}
-    - target: {fileID: 13700006, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
-      propertyPath: m_Bones.Array.data[0]
-      value: 
-      objectReference: {fileID: 4919912816456151484}
-    - target: {fileID: 13700006, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
-      propertyPath: m_Bones.Array.data[1]
-      value: 
-      objectReference: {fileID: 4919912816456151424}
-    - target: {fileID: 13700006, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
-      propertyPath: m_Bones.Array.data[2]
-      value: 
-      objectReference: {fileID: 4919912816456151456}
-    - target: {fileID: 13700006, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
-      propertyPath: m_Bones.Array.data[3]
-      value: 
-      objectReference: {fileID: 4919912816456151482}
-    - target: {fileID: 13700006, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
-      propertyPath: m_Bones.Array.data[4]
-      value: 
-      objectReference: {fileID: 4919912816456151486}
-    - target: {fileID: 13700006, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
-      propertyPath: m_Bones.Array.data[5]
-      value: 
-      objectReference: {fileID: 4919912816456151426}
-    - target: {fileID: 13700006, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 4919912816456151426}
@@ -845,6 +903,34 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 4919912816456151476}
+    - target: {fileID: 13700006, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+      propertyPath: m_Bones.Array.data[0]
+      value: 
+      objectReference: {fileID: 4919912816456151484}
+    - target: {fileID: 13700006, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+      propertyPath: m_Bones.Array.data[1]
+      value: 
+      objectReference: {fileID: 4919912816456151424}
+    - target: {fileID: 13700006, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+      propertyPath: m_Bones.Array.data[2]
+      value: 
+      objectReference: {fileID: 4919912816456151456}
+    - target: {fileID: 13700006, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+      propertyPath: m_Bones.Array.data[3]
+      value: 
+      objectReference: {fileID: 4919912816456151482}
+    - target: {fileID: 13700006, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+      propertyPath: m_Bones.Array.data[4]
+      value: 
+      objectReference: {fileID: 4919912816456151486}
+    - target: {fileID: 13700006, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+      propertyPath: m_Bones.Array.data[5]
+      value: 
+      objectReference: {fileID: 4919912816456151426}
+    - target: {fileID: 13700006, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+      propertyPath: m_RootBone
+      value: 
+      objectReference: {fileID: 4919912816456151426}
     - target: {fileID: 13700010, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
       propertyPath: m_Bones.Array.data[0]
       value: 
@@ -901,6 +987,18 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 4919912816456151476}
+    - target: {fileID: 13700012, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+      propertyPath: m_Bones.Array.data[0]
+      value: 
+      objectReference: {fileID: 4919912816456151464}
+    - target: {fileID: 13700012, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+      propertyPath: m_Bones.Array.data[1]
+      value: 
+      objectReference: {fileID: 4919912816456151472}
+    - target: {fileID: 13700012, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+      propertyPath: m_RootBone
+      value: 
+      objectReference: {fileID: 4919912816456151464}
     - target: {fileID: 13700014, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
       propertyPath: m_Bones.Array.data[0]
       value: 
@@ -921,15 +1019,15 @@ PrefabInstance:
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 4919912816456151424}
-    - target: {fileID: 13700012, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+    - target: {fileID: 13700016, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
       propertyPath: m_Bones.Array.data[0]
       value: 
       objectReference: {fileID: 4919912816456151464}
-    - target: {fileID: 13700012, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+    - target: {fileID: 13700016, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
       propertyPath: m_Bones.Array.data[1]
       value: 
       objectReference: {fileID: 4919912816456151472}
-    - target: {fileID: 13700012, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
+    - target: {fileID: 13700016, guid: 8dd0e8dca9db0ef46a30c01f7deae169, type: 3}
       propertyPath: m_RootBone
       value: 
       objectReference: {fileID: 4919912816456151464}
