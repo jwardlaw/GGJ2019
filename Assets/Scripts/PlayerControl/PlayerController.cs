@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
 
         float camX = Input.GetAxis("CamX");
-        //float camY = Input.GetAxis("CamY");
+        float camY = Input.GetAxis("CamY");
 
         if (IsOnGround())
         {
@@ -165,6 +165,13 @@ public class PlayerController : MonoBehaviour
                 //Debug.Log("move & rotate cam: " + camX);
                 Vector3 cameraVelocity = Vector3.down * camX * camSpeed * Time.deltaTime;
                 cameraRotator.transform.Rotate(-cameraVelocity);
+            }
+
+            if (!CamInRange(camY))
+            {
+                //Debug.Log("move & rotate cam: " + camX);
+                Vector3 cameraVelocity = Vector3.right * camY * camSpeed * Time.deltaTime;
+                cameraRotator.transform.Rotate(cameraVelocity);
             }
 
             if (CamInRange(camX) && !CamMatchesPlayer())
