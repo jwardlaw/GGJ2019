@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public float longJumpVelocity;
     public float longJumpSpeedBoost;
 
+    public bool lockControls = false;
+
     public float yVelocity = 0.0f;
     public float currentSpeed = 0.0f;
     public int onGround = 0;
@@ -44,32 +46,35 @@ public class PlayerController : MonoBehaviour
 
     public void Update()
     {
-        bool jump = Input.GetButtonDown("Jump");
-        bool special_jump = Input.GetButtonDown("Special Jump");
-        bool long_jump = Input.GetButtonDown("Long Jump");
-
-        if (IsOnGround() && !IsJumping())
+        if (!lockControls)
         {
-            if (jump)
+            bool jump = Input.GetButtonDown("Jump");
+            bool special_jump = Input.GetButtonDown("Special Jump");
+            bool long_jump = Input.GetButtonDown("Long Jump");
+
+            if (IsOnGround() && !IsJumping())
             {
-                //Debug.Log("jump");
-                yVelocity += jumpVelocity;
-                currentJumpVelocityIncrease = jumpVelocityIncrease;
-            }
-            else if (special_jump)
-            {
-                //Debug.Log("special_jump");
-                yVelocity += specialJumpVelocity;
-                if (currentSpeed > baseMoveSpeed)
+                if (jump)
                 {
-                    currentSpeed = baseMoveSpeed;
+                    //Debug.Log("jump");
+                    yVelocity += jumpVelocity;
+                    currentJumpVelocityIncrease = jumpVelocityIncrease;
                 }
-            }
-            else if (long_jump)
-            {
-                Debug.Log("long_jump");
-                yVelocity += longJumpVelocity;
-                longJump = true;
+                else if (special_jump)
+                {
+                    //Debug.Log("special_jump");
+                    yVelocity += specialJumpVelocity;
+                    if (currentSpeed > baseMoveSpeed)
+                    {
+                        currentSpeed = baseMoveSpeed;
+                    }
+                }
+                else if (long_jump)
+                {
+                    Debug.Log("long_jump");
+                    yVelocity += longJumpVelocity;
+                    longJump = true;
+                }
             }
         }
     }
@@ -116,79 +121,82 @@ public class PlayerController : MonoBehaviour
 
         transform.Translate(new Vector3(0.0f, yVelocity, 0.0f));
 
-        Vector3 direction = new Vector3(0.0f, 0.0f, 0.0f);
-        if (moveVertical != 0.0f)
+        if (!lockControls)
         {
-            //Debug.Log("vertical: "+moveVertical);
-            Vector3 verticalDirection = cameraRotator.transform.forward * moveVertical;
-            direction += verticalDirection;
-        }
+            Vector3 direction = new Vector3(0.0f, 0.0f, 0.0f);
+            if (moveVertical != 0.0f)
+            {
+                //Debug.Log("vertical: "+moveVertical);
+                Vector3 verticalDirection = cameraRotator.transform.forward * moveVertical;
+                direction += verticalDirection;
+            }
 
-        if (moveHorizontal != 0.0f)
-        {
-            //Debug.Log("horizontal: "+moveHorizontal);
-            Vector3 horizontalDirection = cameraRotator.transform.right * moveHorizontal;
-            direction += horizontalDirection;
-        }
+            if (moveHorizontal != 0.0f)
+            {
+                //Debug.Log("horizontal: "+moveHorizontal);
+                Vector3 horizontalDirection = cameraRotator.transform.right * moveHorizontal;
+                direction += horizontalDirection;
+            }
 
-        if (!CamInRange(camX))
-        {
-            //Debug.Log("move & rotate cam: " + camX);
-            Vector3 cameraVelocity = Vector3.down * camX * camSpeed * Time.deltaTime;
-            cameraRotator.transform.Rotate(-cameraVelocity);
-        }
+            if (!CamInRange(camX))
+            {
+                //Debug.Log("move & rotate cam: " + camX);
+                Vector3 cameraVelocity = Vector3.down * camX * camSpeed * Time.deltaTime;
+                cameraRotator.transform.Rotate(-cameraVelocity);
+            }
 
-        if (CamInRange(camX) && !CamMatchesPlayer())
-        {
-            //Debug.Log("resetting camera...");
-            Vector3 cameraVelocity;
-            float y = cameraRotator.transform.rotation.eulerAngles.y;
-            //Debug.Log(cameraRotator.transform.rotation.eulerAngles.y);
+            if (CamInRange(camX) && !CamMatchesPlayer())
+            {
+                //Debug.Log("resetting camera...");
+                Vector3 cameraVelocity;
+                float y = cameraRotator.transform.rotation.eulerAngles.y;
+                //Debug.Log(cameraRotator.transform.rotation.eulerAngles.y);
 
-            if (y < 180.0f)
-                cameraVelocity = Vector3.down * camShift * Time.deltaTime;
+                if (y < 180.0f)
+                    cameraVelocity = Vector3.down * camShift * Time.deltaTime;
+                else
+                    cameraVelocity = Vector3.up * camShift * Time.deltaTime;
+
+                cameraRotator.transform.Rotate(cameraVelocity);
+            }
+
+            camera.transform.LookAt(transform);
+
+            if (direction.sqrMagnitude != 0)
+            {
+                if (currentSpeed < baseMoveSpeed)
+                {
+                    currentSpeed = baseMoveSpeed;
+                }
+
+                float angle = Vector3.Angle(direction, previousDirection);
+                currentSpeed = baseMoveSpeed + (currentSpeed - baseMoveSpeed) * (1.0f - angle / 180.0f); // decay speed by turn factor
+
+                if (angle >= 90.0f)
+                {
+                    longJump = false;
+                }
+
+                float acceleration = moveAcceleration * Time.deltaTime;
+                if (!IsOnGround())
+                {
+                    acceleration = acceleration * moveAccelerationAirFactor;
+                }
+
+                currentSpeed = Mathf.Min(currentSpeed + acceleration, maxMoveSpeed);
+
+                if (longJump)
+                {
+                    currentSpeed += longJumpSpeedBoost;
+                }
+
+                transform.Translate(currentSpeed * direction.normalized);
+                previousDirection = direction;
+            }
             else
-                cameraVelocity = Vector3.up * camShift * Time.deltaTime;
-
-            cameraRotator.transform.Rotate(cameraVelocity);
-        }
-
-        camera.transform.LookAt(transform);
-
-        if (direction.sqrMagnitude != 0)
-        {
-            if (currentSpeed < baseMoveSpeed)
             {
-                currentSpeed = baseMoveSpeed;
+                currentSpeed = 0.0f;
             }
-
-            float angle = Vector3.Angle(direction, previousDirection);
-            currentSpeed = baseMoveSpeed + (currentSpeed - baseMoveSpeed) * (1.0f - angle / 180.0f); // decay speed by turn factor
-
-            if (angle >= 90.0f)
-            {
-                longJump = false;
-            }
-
-            float acceleration = moveAcceleration * Time.deltaTime;
-            if (!IsOnGround())
-            {
-                acceleration = acceleration * moveAccelerationAirFactor;
-            }
-
-            currentSpeed = Mathf.Min(currentSpeed + acceleration, maxMoveSpeed);
-
-            if (longJump)
-            {
-                currentSpeed += longJumpSpeedBoost;
-            }
-
-            transform.Translate(currentSpeed * direction.normalized);
-            previousDirection = direction;
-        }
-        else
-        {
-            currentSpeed = 0.0f;
         }
     }
 
@@ -225,6 +233,7 @@ public class PlayerController : MonoBehaviour
     {
         yVelocity = 0.0f;
         currentSpeed = 0.0f;
+        lockControls = true;
     }
 
     public void OnCollisionEnter(Collision collision)
@@ -233,6 +242,7 @@ public class PlayerController : MonoBehaviour
         {
             onGround++;
             longJump = false;
+            lockControls = false;
         }
     }
 
