@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Reset : MonoBehaviour
+public class PlayerAnimator : MonoBehaviour
 {
     // Start is called before the first frame update
-    void OnTriggerEnter(Collider other)
+    void Start()
     {
-        if(other.tag == "Player")
-        {
-            PlatformReturn.LastPlatformTouched = this.transform;
-
-        }
+        
     }
 
     // Update is called once per frame
