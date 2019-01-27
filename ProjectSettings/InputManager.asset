@@ -438,11 +438,11 @@ InputManager:
     axis: 3
     joyNum: 1
   - serializedVersion: 3
-    m_Name: CamX
+    m_Name: CamY
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: left
-    positiveButton: right
+    negativeButton: up
+    positiveButton: down
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1
@@ -450,6 +450,6 @@ InputManager:
     sensitivity: 1
     snap: 0
     invert: 0
-    type: 0
-    axis: 0
+    type: 2
+    axis: 4
     joyNum: 0
