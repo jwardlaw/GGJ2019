@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public AudioClip step;
+    AudioSource audio;
+
     public float jumpVelocity;
     public float jumpVelocityIncrease;
     public float jumpVelocityIncreaseDecay;
@@ -39,7 +42,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        audio = GetComponent<AudioSource>();
+        audio.clip = step;
     }
 
     public void Update()
@@ -157,6 +161,7 @@ public class PlayerController : MonoBehaviour
 
         if (direction.sqrMagnitude != 0)
         {
+            audio.Play();
             if (currentSpeed < baseMoveSpeed)
             {
                 currentSpeed = baseMoveSpeed;
