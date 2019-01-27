@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
     {
         currentJumpGracePeriod = Mathf.Max(currentJumpGracePeriod - Time.deltaTime, 0.0f);
 
-        if (!lockControls)
+        if (!lockControls && !PauseSystem._gamePaused)
         {
             bool jump = Input.GetButtonDown("Jump");
             bool special_jump = Input.GetButtonDown("Special Jump");
@@ -288,7 +288,12 @@ public class PlayerController : MonoBehaviour
         onGround++;
         longJump = false;
         lockControls = false;
-        PlatformReturn.LastPlatformTouched = other.transform;
+
+        Reset resetScript = other.transform.GetComponent<Reset>();
+        if (resetScript != null && resetScript.isActiveAndEnabled)
+        {
+            PlatformReturn.LastPlatformTouched = other.transform;
+        }
     }
 
     public void OnGroundExit(Collider other)
