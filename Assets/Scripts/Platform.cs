@@ -26,6 +26,10 @@ public class Platform : MonoBehaviour
         _r.enabled = false;
         // Move the platform model down by _startingdistance
 
+        if (_startingdistance < 0)
+        {
+            print(_startingdistance);
+        }
         model_starting_pos = new Vector3(transform.position.x, transform.position.y - _startingdistance, transform.position.z);
         _model.transform.position = model_starting_pos;
     }
@@ -40,11 +44,14 @@ public class Platform : MonoBehaviour
     void Trigger()
     {
         //Debug.Log("Platform fading in...");
-        audio.clip = platformSound;
-        //audio.timeSamples = audio.clip.samples - 1;
-        audio.time = audio.clip.length * 0.5f;
-        audio.pitch = 0.5f;
-        audio.Play();
+        if (audio != null)
+        {
+            audio.clip = platformSound;
+            //audio.timeSamples = audio.clip.samples - 1;
+            audio.time = audio.clip.length * 0.5f;
+            audio.pitch = 0.5f;
+            audio.Play();
+        }
         _r.enabled = true;
         StartCoroutine(FadeIn(model_starting_pos, transform.position));
     }
