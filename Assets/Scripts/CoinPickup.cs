@@ -13,6 +13,7 @@ public class CoinPickup : MonoBehaviour
         Coin.GetComponent<Renderer>().enabled = false;
         Coin.GetComponent<BoxCollider>().enabled = false;
         transform.GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(1).gameObject.SetActive(false);
         //this.gameObject.SetActive(false);
     }
 }
