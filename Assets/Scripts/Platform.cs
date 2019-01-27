@@ -12,6 +12,7 @@ public class Platform : MonoBehaviour
     public GameObject _model;
     public bool triggered = false;
     private Vector3 model_starting_pos;
+    public Color originalColor;
 
     public AudioClip platformSound;
     public AudioSource audio;
@@ -22,6 +23,7 @@ public class Platform : MonoBehaviour
     {
         // set the child _model's meshrenderer to transparent and disable it
         _r = _model.GetComponent<MeshRenderer>();
+        originalColor = _r.material.color;
         _r.material.color = Color.clear;
         _r.enabled = false;
         // Move the platform model down by _startingdistance
@@ -39,6 +41,11 @@ public class Platform : MonoBehaviour
         {
             triggered = true;
             Trigger();
+        }
+
+        if (other.tag != "Player")
+        {
+            Debug.Log("Not player!");
         }
     }
     void Trigger()
@@ -75,7 +82,7 @@ public class Platform : MonoBehaviour
              _r.enabled = true;
             _model.transform.position = Vector3.LerpUnclamped(start, end, curvedPercent);
 
-            _r.material.color = Color.LerpUnclamped(Color.clear, Color.white, curvedPercent);
+            _r.material.color = Color.LerpUnclamped(Color.clear, originalColor, curvedPercent);
             yield return null;
         }
     }
@@ -91,7 +98,7 @@ public class Platform : MonoBehaviour
 
             _model.transform.position = Vector3.LerpUnclamped(start, end, curvedPercent);
 
-            _r.material.color = Color.LerpUnclamped(Color.white, Color.clear, curvedPercent);
+            _r.material.color = Color.LerpUnclamped(originalColor, Color.clear, curvedPercent);
             yield return null;
         }
         _r.enabled = false;
