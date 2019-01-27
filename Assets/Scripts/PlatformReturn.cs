@@ -6,7 +6,7 @@ public class PlatformReturn : MonoBehaviour
 {
     public float returnHeight;
 
-    public static Vector3 LastPlatformTouched;
+    public static Transform LastPlatformTouched;
     
     // Update is called once per frame
     void OnTriggerEnter(Collider Hazard)
@@ -14,7 +14,9 @@ public class PlatformReturn : MonoBehaviour
         if (Hazard.tag == "Hazard")
         {
             //Debug.Log("This string should run");
-            transform.position = new Vector3(LastPlatformTouched.x, LastPlatformTouched.y + returnHeight, LastPlatformTouched.z);
+            transform.position = new Vector3(LastPlatformTouched.position.x, 
+                LastPlatformTouched.position.y + returnHeight, 
+                LastPlatformTouched.position.z);
 
             PlayerController playerController = GetComponent<PlayerController>();
             if (playerController != null)

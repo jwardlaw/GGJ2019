@@ -213,6 +213,10 @@ public class PlayerController : MonoBehaviour
                 currentSpeed = 0.0f;
             }
         }
+        else
+        {
+            currentSpeed = 0f;
+        }
     }
 
     IEnumerator Play(AudioClip clip)
@@ -248,7 +252,7 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
-    bool IsOnGround()
+    public bool IsOnGround()
     {
         return onGround > 0;
     }

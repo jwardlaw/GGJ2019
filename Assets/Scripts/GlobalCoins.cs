@@ -11,6 +11,6 @@ public class GlobalCoins : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CoinCounter.GetComponent<Text>().text = TotalCoins.ToString();
+        CoinCounter.GetComponent<Text>().text = "Coins: " + TotalCoins.ToString();
     }
 }
