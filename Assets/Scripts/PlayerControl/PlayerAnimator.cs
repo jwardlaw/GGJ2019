@@ -7,11 +7,13 @@ public class PlayerAnimator : MonoBehaviour
     public PlayerController _pc;
     public Rigidbody _rb;
     public Animator _anim;
+    public AudioSource _audio;
+    public AudioClip[] _clips;
 
     // Start is called before the first frame update
     void Awake()
     {
-        _anim = GetComponent<Animator>();
+        _audio = GetComponent<AudioSource>();
         _pc = transform.GetComponentInParent<PlayerController>();
         _rb = _pc.GetComponent<Rigidbody>();
     }
@@ -21,5 +23,16 @@ public class PlayerAnimator : MonoBehaviour
     {
         _anim.SetFloat("speed", _pc.currentSpeed);
         transform.rotation = Quaternion.LookRotation(_pc.previousDirection);
+    }
+
+    void OnLeftFootDown(AnimationEvent ev)
+    {
+        _audio.Play();
+        return;
+    }
+    void OnRightFootDown(AnimationEvent ev)
+    {
+        _audio.Play();
+        return;
     }
 }
