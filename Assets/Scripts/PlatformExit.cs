@@ -13,10 +13,8 @@ public class PlatformExit : MonoBehaviour
     }
     void OnTriggerExit(Collider other)
     {
-        Debug.Log("Exit");
         if(other.tag == "Player" && p.triggered)
         {
-            Debug.Log("Exit");
             p.TriggerExit();
         }
     }
