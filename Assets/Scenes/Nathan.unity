@@ -352,7 +352,7 @@ PrefabInstance:
     - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
         type: 3}
       propertyPath: camShift
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
         type: 3}
@@ -732,6 +732,10 @@ PrefabInstance:
     - target: {fileID: 1727688849, guid: c95933005d6fa8949a4e5e81706fccab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727688847, guid: c95933005d6fa8949a4e5e81706fccab, type: 3}
+      propertyPath: _trigger
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c95933005d6fa8949a4e5e81706fccab, type: 3}
