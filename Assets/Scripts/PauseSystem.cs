@@ -25,7 +25,7 @@ public class PauseSystem : MonoBehaviour
     protected bool commitAction;
     public AudioSource menuSound1;
     public AudioSource menuSound2;
-    protected GameObject playerObject;
+    protected PlayerController playerController;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +33,7 @@ public class PauseSystem : MonoBehaviour
         _gamePaused = false;
         _pauseCanvas.SetActive(false);
         commitAction = false;
-        playerObject = GameObject.FindGameObjectWithTag("Player");
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -84,7 +84,10 @@ public class PauseSystem : MonoBehaviour
                         _pauseCanvas.SetActive(false);
                         break;
                     case PauseOption.Home:
-                        playerObject.transform.position = Vector3.zero;
+                        playerController.transform.position = Vector3.zero;
+                        playerController.OnPlatformReturn();
+                        PlatformReturn.LastPlatformTouched = null;
+
                         _gamePaused = false;
                         Time.timeScale = 1f;
                         _pauseCanvas.SetActive(false);
