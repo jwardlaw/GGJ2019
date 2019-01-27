@@ -269,21 +269,15 @@ public class PlayerController : MonoBehaviour
         lockControls = true;
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnGroundEnter()
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            onGround++;
-            longJump = false;
-            lockControls = false;
-        }
+        onGround++;
+        longJump = false;
+        lockControls = false;
     }
 
-    public void OnCollisionExit(Collision collision)
+    public void OnGroundExit()
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            onGround--;
-        }
+        onGround--;
     }
 }
