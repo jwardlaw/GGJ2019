@@ -149,29 +149,51 @@ public class PlayerController : MonoBehaviour
             if (moveVertical != 0.0f)
             {
                 //Debug.Log("vertical: "+moveVertical);
-                Vector3 verticalDirection = cameraRotator.transform.forward * moveVertical;
+                Vector3 forward = cameraRotator.transform.forward;
+                forward.y = 0;
+                Vector3 verticalDirection = forward * moveVertical;
                 direction += verticalDirection;
             }
 
             if (moveHorizontal != 0.0f)
             {
                 //Debug.Log("horizontal: "+moveHorizontal);
-                Vector3 horizontalDirection = cameraRotator.transform.right * moveHorizontal;
+                Vector3 right = cameraRotator.transform.right;
+                right.y = 0;
+                Vector3 horizontalDirection = right * moveHorizontal;
                 direction += horizontalDirection;
             }
 
             if (!CamInRange(camX))
             {
                 //Debug.Log("move & rotate cam: " + camX);
-                Vector3 cameraVelocity = Vector3.down * camX * camSpeed * Time.deltaTime;
-                cameraRotator.transform.Rotate(-cameraVelocity);
+                Vector3 axis = new Vector3(0.0f, 1.0f, 0.0f);
+                float cameraVelocity = camX * camSpeed * Time.deltaTime;
+                Vector3 currentRotation = cameraRotator.transform.rotation.eulerAngles;
+                Vector3 rotationOnAxis = axis * cameraVelocity;
+                cameraRotator.transform.rotation = Quaternion.Euler(currentRotation + rotationOnAxis);
             }
 
             if (!CamInRange(camY))
             {
                 //Debug.Log("move & rotate cam: " + camX);
-                Vector3 cameraVelocity = Vector3.right * camY * camSpeed * Time.deltaTime;
-                cameraRotator.transform.Rotate(cameraVelocity);
+                Vector3 axis = new Vector3(1.0f, 0.0f, 0.0f);
+                float cameraVelocity = camY * camSpeed * Time.deltaTime;
+                Vector3 currentRotation = cameraRotator.transform.rotation.eulerAngles;
+                Vector3 currentRotationOnAxis = currentRotation;
+                currentRotationOnAxis.Scale(axis);
+                float rotationOnAxis = currentRotationOnAxis.x;
+                if (rotationOnAxis > 180)
+                {
+                    rotationOnAxis -= 360;
+                }
+
+                print(rotationOnAxis);
+                if ((rotationOnAxis < 55 && cameraVelocity > 0) || (rotationOnAxis > -55 && cameraVelocity < 0))
+                {
+                    Vector3 rotationToAdd = axis * cameraVelocity;
+                    cameraRotator.transform.rotation = Quaternion.Euler(currentRotation + rotationToAdd);
+                }
             }
 
             if (CamInRange(camX) && !CamMatchesPlayer())
