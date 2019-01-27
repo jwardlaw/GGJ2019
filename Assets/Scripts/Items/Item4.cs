@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Item4 : MonoBehaviour
 {
+    public GameObject self;
+
     void OnTriggerEnter(Collider other)
     {
         HouseInventory.Picture4 = true;
@@ -11,5 +13,9 @@ public class Item4 : MonoBehaviour
         player.transform.position = Vector3.zero;
         player.OnPlatformReturn();
         PlatformReturn.LastPlatformTouched = null;
+        self.GetComponent<Renderer>().enabled = false;
+        self.GetComponent<BoxCollider>().enabled = false;
+        transform.GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(1).gameObject.SetActive(false);
     }
 }
