@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PauseSystem : MonoBehaviour
@@ -96,7 +97,8 @@ public class PauseSystem : MonoBehaviour
                         // TODO: Display the controls
                         break;
                     case PauseOption.Exit:
-                        // TODO: Return to the title screen (yet to be added)
+                        Time.timeScale = 1f;
+                        SceneManager.LoadScene("Title");
                         break;
                     default:
                         break;
