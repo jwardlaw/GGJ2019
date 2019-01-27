@@ -287,7 +287,12 @@ public class PlayerController : MonoBehaviour
         onGround++;
         longJump = false;
         lockControls = false;
-        PlatformReturn.LastPlatformTouched = other.transform;
+
+        Reset resetScript = other.transform.GetComponent<Reset>();
+        if (resetScript != null && resetScript.isActiveAndEnabled)
+        {
+            PlatformReturn.LastPlatformTouched = other.transform;
+        }
     }
 
     public void OnGroundExit(Collider other)

@@ -472,16 +472,16 @@ MonoBehaviour:
   longJumpSound: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
   audio: {fileID: 1844350013554157967}
   jumpVelocity: 0.2
-  jumpVelocityIncrease: 0.1
+  jumpVelocityIncrease: 0.5
   jumpVelocityIncreaseDecay: 0.2
   currentJumpVelocityIncrease: 0
   specialJumpVelocity: 0.35
   baseMoveSpeed: 0.05
-  moveAcceleration: 0.1
+  moveAcceleration: 0.17
   maxMoveSpeed: 0.15
   maxGravityDecay: 1
   gravityDecayRate: 0.5
-  moveAccelerationAirFactor: 0.5
+  moveAccelerationAirFactor: 0.55
   longJumpVelocity: 0.175
   longJumpSpeedBoost: 0.1
   jumpGracePeriod: 1
@@ -607,23 +607,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8423693540376717519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4919912816456314324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46ea60c15640782408a5d235c6b50fff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _pc: {fileID: 3577186069118525792}
-  _rb: {fileID: 0}
-  _anim: {fileID: 4919912816448921170}
-  _audio: {fileID: 0}
-  _clips: []
 --- !u!82 &8713264132051579917
 AudioSource:
   m_ObjectHideFlags: 0
@@ -720,6 +703,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8423693540376717519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919912816456314324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ea60c15640782408a5d235c6b50fff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pc: {fileID: 3577186069118525792}
+  _rb: {fileID: 0}
+  _anim: {fileID: 4919912816448921170}
+  _audio: {fileID: 0}
+  _clips: []
 --- !u!1001 &4919912816456280882
 PrefabInstance:
   m_ObjectHideFlags: 0
