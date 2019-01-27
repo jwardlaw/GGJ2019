@@ -16,12 +16,14 @@ public class PauseSystem : MonoBehaviour
         Continue,
         Home,
         Controls,
+        Credits,
         Exit,
         NUMBER_OF_PAUSE_OPTIONS
     }
 
     public PauseOption currentSelection;
     public GameObject selector;
+    public GameObject creditsHolder;
     public List<GameObject> textOptions = new List<GameObject>();
     protected bool commitAction;
     public AudioSource menuSound1;
@@ -95,6 +97,9 @@ public class PauseSystem : MonoBehaviour
                         break;
                     case PauseOption.Controls:
                         // TODO: Display the controls
+                        break;
+                    case PauseOption.Credits:
+                        creditsHolder.SetActive(!creditsHolder.activeSelf);
                         break;
                     case PauseOption.Exit:
                         Time.timeScale = 1f;
