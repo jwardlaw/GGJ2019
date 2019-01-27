@@ -11,6 +11,7 @@ public class Platform : MonoBehaviour
     public float _fadeintime = 1f;
     public GameObject _model;
     public bool triggered = false;
+    private Vector3 model_starting_pos;
     // Start is called before the first frame update
 
     void Awake()
@@ -20,7 +21,9 @@ public class Platform : MonoBehaviour
         _r.material.color = Color.clear;
         _r.enabled = false;
         // Move the platform model down by _startingdistance
-        _model.transform.position = new Vector3(transform.position.x, transform.position.y - _startingdistance, transform.position.z);
+
+        model_starting_pos = new Vector3(transform.position.x, transform.position.y - _startingdistance, transform.position.z);
+        _model.transform.position = model_starting_pos;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -33,8 +36,14 @@ public class Platform : MonoBehaviour
     void Trigger()
     {
         //Debug.Log("Platform fading in...");
-        _model.GetComponent<MeshRenderer>().enabled = true;
-        StartCoroutine(FadeIn(_model.transform.position, transform.position));
+        _r.enabled = true;
+        StartCoroutine(FadeIn(model_starting_pos, transform.position));
+    }
+
+    public void TriggerExit()
+    {
+        triggered = false;
+        StartCoroutine(FadeOut(_model.transform.position, model_starting_pos));
     }
 
     // Move the model up to the position of the collider, and gradually increase transparency of the mesh as you go
@@ -46,12 +55,30 @@ public class Platform : MonoBehaviour
             journey = journey + Time.deltaTime;
             float percent = Mathf.Clamp01(journey / _fadeintime);
             float curvedPercent = animationCurve.Evaluate(percent);
-
+        
+             _r.enabled = true;
             _model.transform.position = Vector3.LerpUnclamped(start, end, curvedPercent);
 
             _r.material.color = Color.LerpUnclamped(Color.clear, Color.white, curvedPercent);
             yield return null;
         }
+    }
+
+    public IEnumerator FadeOut(Vector3 start, Vector3 end)
+    {
+        float journey = 0f;
+        while(journey <= _fadeintime)
+        {
+            journey = journey + Time.deltaTime;
+            float percent = Mathf.Clamp01(journey / _fadeintime);
+            float curvedPercent = animationCurve.Evaluate(percent);
+
+            _model.transform.position = Vector3.LerpUnclamped(start, end, curvedPercent);
+
+            _r.material.color = Color.LerpUnclamped(Color.white, Color.clear, curvedPercent);
+            yield return null;
+        }
+        _r.enabled = false;
     }
     
 }
