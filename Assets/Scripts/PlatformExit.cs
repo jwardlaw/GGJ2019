@@ -7,6 +7,7 @@ public class PlatformExit : MonoBehaviour
     public Platform p;
     public float exitRadius = 16f;
     protected GameObject playerObject;
+    protected PlayerController player;
 
     // Start is called before the first frame update
 
@@ -14,11 +15,12 @@ public class PlatformExit : MonoBehaviour
     {
         p = transform.GetComponentInParent<Platform>();
         playerObject = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     private void Update()
     {
-        if (p.triggered)
+        if (p.triggered && player.IsOnGround())
         {
             Vector3 playerHorizontal = new Vector3(playerObject.transform.position.x,
                                                    transform.position.y,

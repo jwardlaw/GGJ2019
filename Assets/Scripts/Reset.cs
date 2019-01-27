@@ -9,7 +9,7 @@ public class Reset : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            PlatformReturn.LastPlatformTouched = this.transform.position;
+            PlatformReturn.LastPlatformTouched = this.transform;
 
         }
     }
