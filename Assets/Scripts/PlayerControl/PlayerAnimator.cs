@@ -22,7 +22,11 @@ public class PlayerAnimator : MonoBehaviour
     void Update()
     {
         _anim.SetFloat("speed", _pc.currentSpeed);
+<<<<<<< Updated upstream
         if (_pc.previousDirection.sqrMagnitude != 0)
+=======
+        if (_pc.previousDirection != Vector3.zero)
+>>>>>>> Stashed changes
         {
             transform.rotation = Quaternion.LookRotation(_pc.previousDirection);
         }

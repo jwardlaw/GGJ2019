@@ -4,17 +4,71 @@ using UnityEngine;
 
 public class HouseLifter : MonoBehaviour
 {
-    public bool Up = false;
     public int Scale = 5;
-    void OnTriggerEnter(Collider Player)
+    public bool triggered = false;
+    public Vector3 HouseStartingPosition;
+    public GameObject House;
+    public Vector3 HouseRaisedPosition;
+
+    public float fadeInTime = 1f;
+    public AnimationCurve animationCurve;
+
+    void Awake()
     {
-        Up = true;
+        HouseStartingPosition = transform.position;
     }
-    void Update()
+        
+       
+
+    void OnTriggerEnter(Collider other)
     {
-        if (Up)
+        if (other.tag == "Player" && !triggered)
         {
-            this.gameObject.transform.Translate(Vector3.up * (Scale * Time.deltaTime));
+            Debug.Log("Entered the house");
+            triggered = true;
+            Trigger();
+        }
+    }
+    void Trigger()
+    {
+        HouseRaisedPosition = new Vector3(transform.position.x, transform.position.y + 10, transform.position.z);
+        StartCoroutine(Lift(HouseStartingPosition, HouseRaisedPosition ));
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Player" && triggered)
+        {
+            StartCoroutine(Lower(HouseRaisedPosition, HouseStartingPosition));
+            triggered = false;
+            //Trigger();
+        }
+    }
+    public IEnumerator Lift(Vector3 start, Vector3 end)
+    {
+        Debug.Log("Lifting");
+        float journey = 0f;
+        while (journey <= fadeInTime)
+        {
+            journey += Time.deltaTime;
+            float percent = Mathf.Clamp01(journey / fadeInTime);
+            float curvedPercent = animationCurve.Evaluate(percent);
+            House.transform.position = Vector3.LerpUnclamped(start, end, curvedPercent);
+
+            yield return null;
+        }
+        
+    }
+    public IEnumerator Lower(Vector3 start, Vector3 end)
+    {
+        float journey = 0f;
+        while (journey <= fadeInTime)
+        {
+            journey += Time.deltaTime;
+            float percent = Mathf.Clamp01(journey / fadeInTime);
+            float curvedPercent = animationCurve.Evaluate(percent);
+            House.transform.position = Vector3.LerpUnclamped(start, end, curvedPercent);
+
+            yield return null;
         }
     }
 }
