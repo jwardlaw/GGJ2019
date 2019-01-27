@@ -236,7 +236,7 @@ public class PlayerController : MonoBehaviour
     {
         audio.clip = clip;
         audio.pitch = 1;
-        if (clip == stepSound || clip == jumpSound)
+        if (clip == stepSound)
         {
             audio.time = audio.clip.length * 0.1f;
             audio.pitch = 3;
