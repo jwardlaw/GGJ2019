@@ -186,10 +186,10 @@ public class PlayerController : MonoBehaviour
         }
         if (direction.sqrMagnitude != 0)
         {
-            if (IsOnGround() && currentSpeed > 0.0f && !audio.isPlaying)
+            /*if (IsOnGround() && currentSpeed > 0.0f && !audio.isPlaying)
             {
                 StartCoroutine(Play(stepSound));
-            }
+            }*/
             if (!lockControls)
             {
                 if (currentSpeed < baseMoveSpeed)
@@ -236,7 +236,7 @@ public class PlayerController : MonoBehaviour
     {
         audio.clip = clip;
         audio.pitch = 1;
-        if (clip == stepSound || clip == jumpSound)
+        if (clip == stepSound)
         {
             audio.time = audio.clip.length * 0.1f;
             audio.pitch = 3;
