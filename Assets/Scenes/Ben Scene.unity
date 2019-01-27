@@ -689,36 +689,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
-        type: 3}
-      propertyPath: jumpVelocity
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
-        type: 3}
-      propertyPath: longJumpVelocity
-      value: 0.175
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
-        type: 3}
-      propertyPath: baseMoveSpeed
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
-        type: 3}
-      propertyPath: maxMoveSpeed
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
-        type: 3}
-      propertyPath: moveAcceleration
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
-        type: 3}
-      propertyPath: jumpVelocityIncreaseDecay
-      value: 0.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d08885e6be40ee499bdfe50c38c2377, type: 3}
 --- !u!1001 &637780249
