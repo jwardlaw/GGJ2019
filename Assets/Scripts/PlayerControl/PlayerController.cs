@@ -154,7 +154,7 @@ public class PlayerController : MonoBehaviour
 
             currentSpeed = Mathf.Min(currentSpeed + acceleration, maxMoveSpeed);
             transform.Translate(currentSpeed * direction.normalized);
-            print(currentSpeed);
+            //print(currentSpeed);
             previousDirection = direction;
         }
         else
