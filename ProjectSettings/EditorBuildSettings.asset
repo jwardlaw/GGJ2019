@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: f356fb022efe30241a62c3bd96b84173
+  - enabled: 1
+    path: Assets/Scenes/Dylan.unity
+    guid: 94fd9e1d4b4c85d419ad2e4c45bf130c
   - enabled: 0
     path: Assets/Scenes/Ben Scene.unity
     guid: fb908af8ce97a994ba83d5f2cff4ae06
