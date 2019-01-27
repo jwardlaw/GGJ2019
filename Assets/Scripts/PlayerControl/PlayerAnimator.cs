@@ -22,13 +22,8 @@ public class PlayerAnimator : MonoBehaviour
     void Update()
     {
         _anim.SetFloat("speed", _pc.currentSpeed);
-        if (_pc.previousDirection.sqrMagnitude != 0)
-        {
-            _anim.SetBool("jump", Input.GetButtonDown("Jump"));
-            _anim.SetBool("falling", _pc.onGround == 0);
-            Debug.Log(_pc.onGround);
-        }
-
+        _anim.SetBool("jump", Input.GetButtonDown("Jump"));
+        _anim.SetBool("falling", _pc.onGround == 0);
         if(Input.GetButtonDown("Jump"))
         {
             _anim.SetTrigger("jump");
