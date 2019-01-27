@@ -5,13 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public Rigidbody player;
-    public Camera camera;
-    public Transform cameraRotator;
-    public float camShift = 50;
-    public float camSpeed = 100;
-    public float epsilon = 0.05f;
-    public float playerCamMatch = 1;
 
     public float jumpVelocity;
     public float jumpVelocityIncrease;
@@ -23,15 +16,21 @@ public class PlayerController : MonoBehaviour
     public float baseMoveSpeed;
     public float moveAcceleration;
     public float maxMoveSpeed;
-    public float currentSpeed = 0.0f;
-    public int onGround = 0;
-
-    public float yVelocity = 0.0f;
-    public Vector3 velocity = new Vector3(0.0f, 0.0f, 0.0f);
 
     public float maxGravityDecay;
     public float gravityDecayRate;
     public float moveAccelerationAirFactor;
+
+    public float yVelocity = 0.0f;
+    public float currentSpeed = 0.0f;
+    public int onGround = 0;
+
+    public Camera camera;
+    public Transform cameraRotator;
+    public float camShift = 50;
+    public float camSpeed = 100;
+    public float epsilon = 0.05f;
+    public float playerCamMatch = 1;
 
     public Vector3 previousDirection = new Vector3(0.0f, 0.0f, 0.0f);
 
@@ -71,6 +70,10 @@ public class PlayerController : MonoBehaviour
             {
                 //Debug.Log("special_jump");
                 yVelocity += specialJumpVelocity;
+                if (currentSpeed > baseMoveSpeed)
+                {
+                    currentSpeed = baseMoveSpeed;
+                }
             }
         }
         else
@@ -128,10 +131,10 @@ public class PlayerController : MonoBehaviour
             else
                 cameraVelocity = Vector3.up * camShift * Time.deltaTime;
 
-            cameraRotator.transform.Rotate(cameraVelocity);
+            cameraRotator.transform.Rotate(-cameraVelocity);
         }
 
-        camera.transform.LookAt(player.transform);
+        camera.transform.LookAt(transform);
 
         if (direction.sqrMagnitude != 0)
         {
@@ -158,7 +161,6 @@ public class PlayerController : MonoBehaviour
         {
             currentSpeed = 0.0f;
         }
-        //yVelocity
     }
 
     bool CamInRange(float x)
@@ -169,7 +171,7 @@ public class PlayerController : MonoBehaviour
     bool CamMatchesPlayer()
     {
         Vector3 camRot = cameraRotator.transform.rotation.eulerAngles;
-        Vector3 playerRot = player.transform.rotation.eulerAngles;
+        Vector3 playerRot = transform.rotation.eulerAngles;
 
         if (Mathf.Abs(camRot.y - playerRot.y) < playerCamMatch)
         {
@@ -183,6 +185,12 @@ public class PlayerController : MonoBehaviour
     public bool IsOnGround()
     {
         return onGround > 0;
+    }
+
+    public void OnPlatformReturn()
+    {
+        yVelocity = 0.0f;
+        currentSpeed = 0.0f;
     }
 
     public void OnCollisionEnter(Collision collision)
