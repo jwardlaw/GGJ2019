@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gravity : MonoBehaviour
+public class HammerScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public int Scale = 300;
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(Vector3.up, (Scale * Time.deltaTime));
     }
 }
