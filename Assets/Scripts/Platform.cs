@@ -41,8 +41,9 @@ public class Platform : MonoBehaviour
     {
         //Debug.Log("Platform fading in...");
         audio.clip = platformSound;
-        audio.timeSamples = audio.clip.samples - 1;
-        audio.pitch = -1;
+        //audio.timeSamples = audio.clip.samples - 1;
+        audio.time = audio.clip.length * 0.5f;
+        audio.pitch = 0.5f;
         audio.Play();
         _r.enabled = true;
         StartCoroutine(FadeIn(model_starting_pos, transform.position));

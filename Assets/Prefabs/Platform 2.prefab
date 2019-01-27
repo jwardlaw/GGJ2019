@@ -203,7 +203,7 @@ MonoBehaviour:
   _fadeintime: 1
   _model: {fileID: 158693239}
   triggered: 0
-  platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
+  platformSound: {fileID: 8300000, guid: 913f55758789eb84a805189402b781d3, type: 3}
   audio: {fileID: 3241787391998746918}
 --- !u!135 &1727688846
 SphereCollider:
