@@ -28,8 +28,11 @@ public class PlayerController : MonoBehaviour
     public float longJumpVelocity;
     public float longJumpSpeedBoost;
 
-    public bool lockControls = false;
+    public float jumpGracePeriod;
 
+    public float currentJumpGracePeriod = 0.0f;
+    public bool lockControls = false;
+    
     public float yVelocity = 0.0f;
     public float currentSpeed = 0.0f;
     public int onGround = 0;
@@ -50,28 +53,37 @@ public class PlayerController : MonoBehaviour
         audio = GetComponent<AudioSource>();
     }
 
+    public void StartJump(float velocity)
+    {
+        print("StartJump" + velocity);
+        yVelocity += velocity;
+        currentJumpGracePeriod = jumpGracePeriod;
+    }
+
     public void Update()
     {
+        currentJumpGracePeriod = Mathf.Max(currentJumpGracePeriod - Time.deltaTime, 0.0f);
+
         if (!lockControls)
         {
             bool jump = Input.GetButtonDown("Jump");
             bool special_jump = Input.GetButtonDown("Special Jump");
             bool long_jump = Input.GetButtonDown("Long Jump");
 
-            if (IsOnGround() && !IsJumping())
+            if ((IsOnGround() || currentJumpGracePeriod > 0.0f) && !IsJumping())
             {
                 if (jump)
                 {
                     StartCoroutine(Play(jumpSound));
+                    StartJump(jumpVelocity);
                     //Debug.Log("jump");
-                    yVelocity += jumpVelocity;
                     currentJumpVelocityIncrease = jumpVelocityIncrease;
                 }
                 else if (special_jump)
                 {
                     StartCoroutine(Play(highJumpSound));
                     //Debug.Log("special_jump");
-                    yVelocity += specialJumpVelocity;
+                    StartJump(specialJumpVelocity);
                     if (currentSpeed > baseMoveSpeed)
                     {
                         currentSpeed = baseMoveSpeed;
@@ -81,7 +93,7 @@ public class PlayerController : MonoBehaviour
                 {
                     StartCoroutine(Play(longJumpSound));
                     //Debug.Log("long_jump");
-                    yVelocity += longJumpVelocity;
+                    StartJump(longJumpVelocity);
                     longJump = true;
                 }
             }
@@ -269,21 +281,15 @@ public class PlayerController : MonoBehaviour
         lockControls = true;
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnGroundEnter()
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            onGround++;
-            longJump = false;
-            lockControls = false;
-        }
+        onGround++;
+        longJump = false;
+        lockControls = false;
     }
 
-    public void OnCollisionExit(Collision collision)
+    public void OnGroundExit()
     {
-        if (collision.gameObject.tag == "Ground")
-        {
-            onGround--;
-        }
+        onGround--;
     }
 }
