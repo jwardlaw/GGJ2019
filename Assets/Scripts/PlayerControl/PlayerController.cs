@@ -228,6 +228,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            // decelerate
             currentSpeed = 0f;
         }
     }

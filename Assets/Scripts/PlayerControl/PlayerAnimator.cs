@@ -22,10 +22,22 @@ public class PlayerAnimator : MonoBehaviour
     void Update()
     {
         _anim.SetFloat("speed", _pc.currentSpeed);
+<<<<<<< HEAD
+<<<<<<< Updated upstream
         if (_pc.previousDirection.sqrMagnitude != 0)
+=======
+        if (_pc.previousDirection != Vector3.zero)
+>>>>>>> Stashed changes
+=======
+        _anim.SetBool("jump", Input.GetButtonDown("Jump"));
+        _anim.SetBool("falling", _pc.onGround == 0);
+        Debug.Log(_pc.onGround);
+        if(Input.GetButtonDown("Jump"))
+>>>>>>> master
         {
-            transform.rotation = Quaternion.LookRotation(_pc.previousDirection);
+            _anim.SetTrigger("jump");
         }
+        transform.rotation = Quaternion.LookRotation(_pc.previousDirection);
     }
 
     void OnLeftFootDown(AnimationEvent ev)
