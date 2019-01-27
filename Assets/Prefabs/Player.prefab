@@ -299,20 +299,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba8bbd5658ead97489a907ac073cc62d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpVelocity: 0.1
-  jumpVelocityIncrease: 0.06
-  jumpVelocityIncreaseDecay: 0.02
+  jumpVelocity: 0.2
+  jumpVelocityIncrease: 0.1
+  jumpVelocityIncreaseDecay: 0.2
   currentJumpVelocityIncrease: 0
-  specialJumpVelocity: 0.2
-  baseMoveSpeed: 0.05
-  moveAcceleration: 0.1
-  maxMoveSpeed: 0.15
-  maxGravityDecay: 0.6
-  gravityDecayRate: 0.25
+  specialJumpVelocity: 0.35
+  baseMoveSpeed: 0.5
+  moveAcceleration: 0.75
+  maxMoveSpeed: 0.125
+  maxGravityDecay: 1
+  gravityDecayRate: 0.5
   moveAccelerationAirFactor: 0.5
+  longJumpVelocity: 0.15
+  longJumpSpeedBoost: 0.1
   yVelocity: 0
   currentSpeed: 0
   onGround: 0
+  longJump: 0
   camera: {fileID: 3577186068926138729}
   cameraRotator: {fileID: 3577186068911824417}
   camShift: 0

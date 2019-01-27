@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
-
     public float jumpVelocity;
     public float jumpVelocityIncrease;
     public float jumpVelocityIncreaseDecay;
@@ -21,9 +19,13 @@ public class PlayerController : MonoBehaviour
     public float gravityDecayRate;
     public float moveAccelerationAirFactor;
 
+    public float longJumpVelocity;
+    public float longJumpSpeedBoost;
+
     public float yVelocity = 0.0f;
     public float currentSpeed = 0.0f;
     public int onGround = 0;
+    public bool longJump = false;
 
     public Camera camera;
     public Transform cameraRotator;
@@ -40,26 +42,14 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Update()
     {
         bool jump = Input.GetButtonDown("Jump");
-        bool jump_hold = Input.GetButton("Jump"); 
         bool special_jump = Input.GetButtonDown("Special Jump");
+        bool long_jump = Input.GetButtonDown("Long Jump");
 
-        float moveVertical = Input.GetAxis("Vertical");
-        float moveHorizontal = Input.GetAxis("Horizontal");
-
-        float camX = Input.GetAxis("CamX");
-        //float camY = Input.GetAxis("CamY");
-
-        if (IsOnGround())
+        if (IsOnGround() && !IsJumping())
         {
-            if (yVelocity < 0.0f)
-            {
-                yVelocity = 0.0f;
-            }
-            
             if (jump)
             {
                 //Debug.Log("jump");
@@ -75,8 +65,33 @@ public class PlayerController : MonoBehaviour
                     currentSpeed = baseMoveSpeed;
                 }
             }
+            else if (long_jump)
+            {
+                Debug.Log("long_jump");
+                yVelocity += longJumpVelocity;
+                longJump = true;
+            }
         }
-        else
+    }
+
+    public void FixedUpdate()
+    {
+        bool jump_hold = Input.GetButton("Jump"); 
+
+        float moveVertical = Input.GetAxis("Vertical");
+        float moveHorizontal = Input.GetAxis("Horizontal");
+
+        float camX = Input.GetAxis("CamX");
+        //float camY = Input.GetAxis("CamY");
+
+        if (IsOnGround())
+        {
+            if (!IsJumping())
+            {
+                yVelocity = 0.0f;
+            }
+        }
+        else if (IsJumping())
         {
             if (currentJumpVelocityIncrease > 0.0f)
             {
@@ -86,10 +101,14 @@ public class PlayerController : MonoBehaviour
                     yVelocity += jumpVelocityDecay;
                 }
 
-                currentJumpVelocityIncrease = Mathf.Max(currentJumpVelocityIncrease - jumpVelocityDecay, 0.0f); 
+                currentJumpVelocityIncrease = Mathf.Max(currentJumpVelocityIncrease - jumpVelocityDecay, 0.0f);
             }
 
-            if (yVelocity > 0 || -yVelocity < maxGravityDecay)
+            //yVelocity = Mathf.Max((yVelocity - jumpDecay * Time.deltaTime), 0.0f);
+        }
+
+        if (yVelocity > 0 || -yVelocity < maxGravityDecay)
+        {
             {
                 yVelocity = Mathf.Max(yVelocity - gravityDecayRate * Time.deltaTime, -maxGravityDecay);
             }
@@ -116,7 +135,7 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("move & rotate cam: " + camX);
             Vector3 cameraVelocity = Vector3.down * camX * camSpeed * Time.deltaTime;
-            cameraRotator.transform.Rotate(cameraVelocity);
+            cameraRotator.transform.Rotate(-cameraVelocity);
         }
 
         if (CamInRange(camX) && !CamMatchesPlayer())
@@ -131,7 +150,7 @@ public class PlayerController : MonoBehaviour
             else
                 cameraVelocity = Vector3.up * camShift * Time.deltaTime;
 
-            cameraRotator.transform.Rotate(-cameraVelocity);
+            cameraRotator.transform.Rotate(cameraVelocity);
         }
 
         camera.transform.LookAt(transform);
@@ -146,6 +165,11 @@ public class PlayerController : MonoBehaviour
             float angle = Vector3.Angle(direction, previousDirection);
             currentSpeed = baseMoveSpeed + (currentSpeed - baseMoveSpeed) * (1.0f - angle / 180.0f); // decay speed by turn factor
 
+            if (angle >= 90.0f)
+            {
+                longJump = false;
+            }
+
             float acceleration = moveAcceleration * Time.deltaTime;
             if (!IsOnGround())
             {
@@ -153,8 +177,13 @@ public class PlayerController : MonoBehaviour
             }
 
             currentSpeed = Mathf.Min(currentSpeed + acceleration, maxMoveSpeed);
+
+            if (longJump)
+            {
+                currentSpeed += longJumpSpeedBoost;
+            }
+
             transform.Translate(currentSpeed * direction.normalized);
-            print(currentSpeed);
             previousDirection = direction;
         }
         else
@@ -187,6 +216,11 @@ public class PlayerController : MonoBehaviour
         return onGround > 0;
     }
 
+    public bool IsJumping()
+    {
+        return yVelocity > 0;
+    }
+
     public void OnPlatformReturn()
     {
         yVelocity = 0.0f;
@@ -195,16 +229,15 @@ public class PlayerController : MonoBehaviour
 
     public void OnCollisionEnter(Collision collision)
     {
-        print("OnCollisionEnter");
         if (collision.gameObject.tag == "Ground")
         {
             onGround++;
+            longJump = false;
         }
     }
 
     public void OnCollisionExit(Collision collision)
     {
-        print("OnCollisionExit");
         if (collision.gameObject.tag == "Ground")
         {
             onGround--;
