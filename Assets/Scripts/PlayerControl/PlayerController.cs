@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public AudioClip step;
+    public AudioSource audio;
+
     public float jumpVelocity;
     public float jumpVelocityIncrease;
     public float jumpVelocityIncreaseDecay;
@@ -41,7 +44,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        audio = GetComponent<AudioSource>();
+        audio.clip = step;
     }
 
     public void Update()
@@ -115,16 +119,15 @@ public class PlayerController : MonoBehaviour
 
         if (yVelocity > 0 || -yVelocity < maxGravityDecay)
         {
-            {
-                yVelocity = Mathf.Max(yVelocity - gravityDecayRate * Time.deltaTime, -maxGravityDecay);
-            }
+            yVelocity = Mathf.Max(yVelocity - gravityDecayRate * Time.deltaTime, -maxGravityDecay);
         }
 
         transform.Translate(new Vector3(0.0f, yVelocity, 0.0f));
 
+        Vector3 direction = new Vector3(0.0f, 0.0f, 0.0f);
+
         if (!lockControls)
         {
-            Vector3 direction = new Vector3(0.0f, 0.0f, 0.0f);
             if (moveVertical != 0.0f)
             {
                 //Debug.Log("vertical: "+moveVertical);
@@ -162,8 +165,12 @@ public class PlayerController : MonoBehaviour
             }
 
             camera.transform.LookAt(transform);
-
-            if (direction.sqrMagnitude != 0)
+        }
+        if (direction.sqrMagnitude != 0)
+        {
+            if (IsOnGround() && currentSpeed > 0.0f)
+                StartCoroutine(Play());
+            if (currentSpeed < baseMoveSpeed)
             {
                 if (currentSpeed < baseMoveSpeed)
                 {
@@ -201,6 +208,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    IEnumerator Play()
+    {
+        if (!audio.isPlaying)
+        {
+            audio.time = audio.clip.length * 0.1f;
+            audio.Play();
+            yield return new WaitForSeconds(audio.clip.length);
+        }
+    }
+
     bool CamInRange(float x)
     {
         return x < epsilon && x > -epsilon;
@@ -220,12 +237,12 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
-    public bool IsOnGround()
+    bool IsOnGround()
     {
         return onGround > 0;
     }
 
-    public bool IsJumping()
+    bool IsJumping()
     {
         return yVelocity > 0;
     }
