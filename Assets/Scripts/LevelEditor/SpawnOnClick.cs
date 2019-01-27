@@ -13,10 +13,7 @@ public class SpawnOnClick : MonoBehaviour
 
     public void OnMouseDown()
     {
-        print("OnMouseDown");
-
-        GameObject newObject = GameObject.Instantiate(levelEditor.objectToSpawn);
-        newObject.transform.SetPositionAndRotation(transform.position, transform.rotation);
+        levelEditor.SpawnObject(transform.position);
         GameObject.Destroy(gameObject);
     }
 }
