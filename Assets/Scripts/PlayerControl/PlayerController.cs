@@ -186,10 +186,10 @@ public class PlayerController : MonoBehaviour
         }
         if (direction.sqrMagnitude != 0)
         {
-            if (IsOnGround() && currentSpeed > 0.0f && !audio.isPlaying)
+            /*if (IsOnGround() && currentSpeed > 0.0f && !audio.isPlaying)
             {
                 StartCoroutine(Play(stepSound));
-            }
+            }*/
             if (!lockControls)
             {
                 if (currentSpeed < baseMoveSpeed)
