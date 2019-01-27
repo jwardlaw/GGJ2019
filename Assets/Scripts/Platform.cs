@@ -12,6 +12,10 @@ public class Platform : MonoBehaviour
     public GameObject _model;
     public bool triggered = false;
     private Vector3 model_starting_pos;
+
+    public AudioClip platformSound;
+    public AudioSource audio;
+
     // Start is called before the first frame update
 
     void Awake()
@@ -36,6 +40,10 @@ public class Platform : MonoBehaviour
     void Trigger()
     {
         //Debug.Log("Platform fading in...");
+        audio.clip = platformSound;
+        audio.timeSamples = audio.clip.samples - 1;
+        audio.pitch = -1;
+        audio.Play();
         _r.enabled = true;
         StartCoroutine(FadeIn(model_starting_pos, transform.position));
     }

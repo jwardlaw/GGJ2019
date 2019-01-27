@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public AudioClip stepSound;
     public AudioClip jumpSound;
+    public AudioClip highJumpSound;
+    public AudioClip longJumpSound;
     public AudioSource audio;
 
     public float jumpVelocity;
@@ -60,14 +62,14 @@ public class PlayerController : MonoBehaviour
             {
                 if (jump)
                 {
-                    StartCoroutine(Play(true));
+                    StartCoroutine(Play(jumpSound));
                     //Debug.Log("jump");
                     yVelocity += jumpVelocity;
                     currentJumpVelocityIncrease = jumpVelocityIncrease;
                 }
                 else if (special_jump)
                 {
-                    StartCoroutine(Play(true));
+                    StartCoroutine(Play(highJumpSound));
                     //Debug.Log("special_jump");
                     yVelocity += specialJumpVelocity;
                     if (currentSpeed > baseMoveSpeed)
@@ -77,7 +79,7 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (long_jump)
                 {
-                    StartCoroutine(Play(true));
+                    StartCoroutine(Play(longJumpSound));
                     //Debug.Log("long_jump");
                     yVelocity += longJumpVelocity;
                     longJump = true;
@@ -173,7 +175,7 @@ public class PlayerController : MonoBehaviour
         {
             if (IsOnGround() && currentSpeed > 0.0f && !audio.isPlaying)
             {
-                StartCoroutine(Play(false));
+                StartCoroutine(Play(stepSound));
             }
             if (!lockControls)
             {
@@ -213,19 +215,18 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator Play(bool jump)
+    IEnumerator Play(AudioClip clip)
     {
-        if (jump)
+        audio.clip = clip;
+        audio.pitch = 1;
+        if (clip == stepSound || clip == jumpSound)
         {
-            audio.clip = jumpSound;
+            audio.time = audio.clip.length * 0.1f;
+            audio.pitch = 3;
         }
-        else
-        {
-            audio.clip = stepSound;
-        }
-        audio.time = audio.clip.length * 0.1f;
+        
         audio.Play();
-        yield return new WaitForSeconds(audio.clip.length * 0.9f);
+        yield return new WaitForSeconds(audio.clip.length);
     }
 
     bool CamInRange(float x)

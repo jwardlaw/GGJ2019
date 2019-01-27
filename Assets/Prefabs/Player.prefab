@@ -399,6 +399,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepSound: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
   jumpSound: {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+  highJumpSound: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
+  longJumpSound: {fileID: 8300000, guid: 3becec1909f194046945d85ac1077772, type: 3}
   audio: {fileID: 1844350013554157967}
   jumpVelocity: 0.2
   jumpVelocityIncrease: 0.1
