@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
         float moveVertical = Input.GetAxis("Vertical");
         float moveHorizontal = Input.GetAxis("Horizontal");
 
+
         float camX = Input.GetAxis("CamX");
         //float camY = Input.GetAxis("CamY");
 

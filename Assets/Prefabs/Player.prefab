@@ -304,14 +304,15 @@ MonoBehaviour:
   jumpVelocityIncreaseDecay: 0.2
   currentJumpVelocityIncrease: 0
   specialJumpVelocity: 0.35
-  baseMoveSpeed: 0.5
-  moveAcceleration: 0.75
-  maxMoveSpeed: 0.125
+  baseMoveSpeed: 0.05
+  moveAcceleration: 0.1
+  maxMoveSpeed: 0.15
   maxGravityDecay: 1
   gravityDecayRate: 0.5
   moveAccelerationAirFactor: 0.5
-  longJumpVelocity: 0.15
+  longJumpVelocity: 0.175
   longJumpSpeedBoost: 0.1
+  lockControls: 0
   yVelocity: 0
   currentSpeed: 0
   onGround: 0
