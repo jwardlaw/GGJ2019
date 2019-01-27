@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
     {
         currentJumpGracePeriod = Mathf.Max(currentJumpGracePeriod - Time.deltaTime, 0.0f);
 
-        if (!lockControls)
+        if (!lockControls && !PauseSystem._gamePaused)
         {
             bool jump = Input.GetButtonDown("Jump");
             bool special_jump = Input.GetButtonDown("Special Jump");
