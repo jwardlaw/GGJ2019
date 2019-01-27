@@ -9,6 +9,7 @@ public class MajorItemPickup1 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        audio.Play();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         self.GetComponent<Renderer>().enabled = false;
