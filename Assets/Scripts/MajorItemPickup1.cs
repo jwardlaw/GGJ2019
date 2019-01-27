@@ -18,5 +18,9 @@ public class MajorItemPickup1 : MonoBehaviour
 
         HouseInventory.Picture1 = true;
         player.transform.position = Vector3.zero;
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        if (playerController != null)
+            playerController.OnPlatformReturn();
+        PlatformReturn.LastPlatformTouched = null;
     }
 }
