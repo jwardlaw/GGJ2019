@@ -738,9 +738,9 @@ MonoBehaviour:
     type: 3}
   spawnParent: {fileID: 921573085}
   placements: []
-  objectToSpawn: {fileID: 4105399917913147373, guid: cd04edabcaa495747963e00cc03ff6c3,
+  objectToSpawn: {fileID: 1201730839309183899, guid: ca2b312ec334210499c4b59a1c7aa0a5,
     type: 3}
-  spacing: 1
+  spacing: 1.25
   gridWidth: 10
   gridHeight: 10
   gridY: 0
@@ -1424,7 +1424,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1894949157}
   m_LocalRotation: {x: 0.20674661, y: -0, z: -0, w: 0.97839457}
-  m_LocalPosition: {x: 0, y: 6, z: -12.17}
+  m_LocalPosition: {x: 0, y: 8.49, z: -16.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1256212051}

@@ -213,6 +213,10 @@ public class PlayerController : MonoBehaviour
                 currentSpeed = 0.0f;
             }
         }
+        else
+        {
+            currentSpeed = 0f;
+        }
     }
 
     IEnumerator Play(AudioClip clip)
