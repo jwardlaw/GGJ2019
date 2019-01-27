@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public AudioClip step;
+    public AudioClip stepSound;
+    public AudioClip jumpSound;
     public AudioSource audio;
 
     public float jumpVelocity;
@@ -45,7 +46,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         audio = GetComponent<AudioSource>();
-        audio.clip = step;
     }
 
     public void Update()
@@ -60,12 +60,14 @@ public class PlayerController : MonoBehaviour
             {
                 if (jump)
                 {
+                    StartCoroutine(Play(true));
                     //Debug.Log("jump");
                     yVelocity += jumpVelocity;
                     currentJumpVelocityIncrease = jumpVelocityIncrease;
                 }
                 else if (special_jump)
                 {
+                    StartCoroutine(Play(true));
                     //Debug.Log("special_jump");
                     yVelocity += specialJumpVelocity;
                     if (currentSpeed > baseMoveSpeed)
@@ -75,7 +77,8 @@ public class PlayerController : MonoBehaviour
                 }
                 else if (long_jump)
                 {
-                    Debug.Log("long_jump");
+                    StartCoroutine(Play(true));
+                    //Debug.Log("long_jump");
                     yVelocity += longJumpVelocity;
                     longJump = true;
                 }
@@ -168,9 +171,11 @@ public class PlayerController : MonoBehaviour
         }
         if (direction.sqrMagnitude != 0)
         {
-            if (IsOnGround() && currentSpeed > 0.0f)
-                StartCoroutine(Play());
-            if (currentSpeed < baseMoveSpeed)
+            if (IsOnGround() && currentSpeed > 0.0f && !audio.isPlaying)
+            {
+                StartCoroutine(Play(false));
+            }
+            if (!lockControls)
             {
                 if (currentSpeed < baseMoveSpeed)
                 {
@@ -208,14 +213,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator Play()
+    IEnumerator Play(bool jump)
     {
-        if (!audio.isPlaying)
+        if (jump)
         {
-            audio.time = audio.clip.length * 0.1f;
-            audio.Play();
-            yield return new WaitForSeconds(audio.clip.length);
+            audio.clip = jumpSound;
         }
+        else
+        {
+            audio.clip = stepSound;
+        }
+        audio.time = audio.clip.length * 0.1f;
+        audio.Play();
+        yield return new WaitForSeconds(audio.clip.length * 0.9f);
     }
 
     bool CamInRange(float x)
