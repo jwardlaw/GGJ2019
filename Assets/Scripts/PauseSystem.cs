@@ -25,8 +25,10 @@ public class PauseSystem : MonoBehaviour
     public PauseOption currentSelection;
     public GameObject selector;
     public GameObject creditsHolder;
+    public GameObject controlImage;
     public List<GameObject> textOptions = new List<GameObject>();
     protected bool commitAction;
+    protected bool showControls;
     public AudioSource menuSound1;
     public AudioSource menuSound2;
     protected PlayerController playerController;
@@ -37,6 +39,7 @@ public class PauseSystem : MonoBehaviour
         _gamePaused = false;
         _pauseCanvas.SetActive(false);
         commitAction = false;
+        showControls = false;
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
@@ -49,28 +52,38 @@ public class PauseSystem : MonoBehaviour
             _gamePaused = !_gamePaused;
             Time.timeScale = _gamePaused ? 0f : 1f;
             _pauseCanvas.SetActive(_gamePaused);
+
+            if (_gamePaused)
+            {
+                showControls = false;
+                controlImage.SetActive(false);
+                currentSelection = 0;
+            }
         }
         
         if (_gamePaused)
         {
-            float newYInput = Input.GetAxis("Vertical");
-            if (Input.GetKeyDown(KeyCode.W) || (newYInput > 0.1f && lastYInput <= 0.1f))
+            if (!showControls)
             {
-                if (--currentSelection < 0)
+                float newYInput = Input.GetAxis("Vertical");
+                if (Input.GetKeyDown(KeyCode.W) || (newYInput > 0.1f && lastYInput <= 0.1f))
                 {
-                    currentSelection = PauseOption.NUMBER_OF_PAUSE_OPTIONS - 1;
+                    if (--currentSelection < 0)
+                    {
+                        currentSelection = PauseOption.NUMBER_OF_PAUSE_OPTIONS - 1;
+                    }
+                    menuSound2.Play();
                 }
-                menuSound2.Play();
-            }
-            else if (Input.GetKeyDown(KeyCode.S) || (newYInput < -0.1f && lastYInput >= 0.1f))
-            {
-                if (++currentSelection >= PauseOption.NUMBER_OF_PAUSE_OPTIONS)
+                else if (Input.GetKeyDown(KeyCode.S) || (newYInput < -0.1f && lastYInput >= 0.1f))
                 {
-                    currentSelection = 0;
+                    if (++currentSelection >= PauseOption.NUMBER_OF_PAUSE_OPTIONS)
+                    {
+                        currentSelection = 0;
+                    }
+                    menuSound2.Play();
                 }
-                menuSound2.Play();
+                lastYInput = newYInput;
             }
-            lastYInput = newYInput;
 
             Vector3 selectPos = selector.transform.position;
             selectPos.y = textOptions[(int)currentSelection].transform.position.y;
@@ -97,7 +110,8 @@ public class PauseSystem : MonoBehaviour
                         _pauseCanvas.SetActive(false);
                         break;
                     case PauseOption.Controls:
-                        // TODO: Display the controls
+                        showControls = !showControls;
+                        controlImage.SetActive(showControls);
                         break;
                     case PauseOption.Credits:
                         creditsHolder.SetActive(!creditsHolder.activeSelf);
