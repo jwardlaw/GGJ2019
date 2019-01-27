@@ -9,7 +9,7 @@ public class MajorItemPickup1 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        GameObject player = other.transform.parent.gameObject;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
 
         self.GetComponent<Renderer>().enabled = false;
         self.GetComponent<BoxCollider>().enabled = false;
