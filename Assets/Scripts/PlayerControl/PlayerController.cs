@@ -55,9 +55,8 @@ public class PlayerController : MonoBehaviour
 
     public void StartJump(float velocity)
     {
-        print("StartJump" + velocity);
         yVelocity += velocity;
-        currentJumpGracePeriod = jumpGracePeriod;
+        currentJumpGracePeriod = 0.0f;
     }
 
     public void Update()
@@ -70,7 +69,9 @@ public class PlayerController : MonoBehaviour
             bool special_jump = Input.GetButtonDown("Special Jump");
             bool long_jump = Input.GetButtonDown("Long Jump");
 
-            if ((IsOnGround() || currentJumpGracePeriod > 0.0f) && !IsJumping())
+            bool gracePeriod = currentJumpGracePeriod > 0.0f;
+            bool isOnGround = IsOnGround();
+            if ((gracePeriod || isOnGround) && !IsJumping())
             {
                 if (jump)
                 {
@@ -281,15 +282,21 @@ public class PlayerController : MonoBehaviour
         lockControls = true;
     }
 
-    public void OnGroundEnter()
+    public void OnGroundEnter(Collider other)
     {
         onGround++;
         longJump = false;
         lockControls = false;
+        PlatformReturn.LastPlatformTouched = other.transform;
     }
 
-    public void OnGroundExit()
+    public void OnGroundExit(Collider other)
     {
         onGround--;
+
+        if (!IsJumping())
+        {
+            currentJumpGracePeriod = jumpGracePeriod;
+        }
     }
 }
