@@ -171,7 +171,7 @@ public class PlayerController : MonoBehaviour
             {
                 //Debug.Log("move & rotate cam: " + camX);
                 Vector3 cameraVelocity = Vector3.right * camY * camSpeed * Time.deltaTime;
-                cameraRotator.transform.Rotate(-cameraVelocity);
+                cameraRotator.transform.Rotate(cameraVelocity);
             }
 
             if (CamInRange(camX) && !CamMatchesPlayer())
