@@ -352,7 +352,7 @@ PrefabInstance:
     - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
         type: 3}
       propertyPath: camShift
-      value: 50
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3577186069118525792, guid: 2d08885e6be40ee499bdfe50c38c2377,
         type: 3}
@@ -732,6 +732,10 @@ PrefabInstance:
     - target: {fileID: 1727688849, guid: c95933005d6fa8949a4e5e81706fccab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1727688847, guid: c95933005d6fa8949a4e5e81706fccab, type: 3}
+      propertyPath: _trigger
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c95933005d6fa8949a4e5e81706fccab, type: 3}
@@ -2245,6 +2249,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c95933005d6fa8949a4e5e81706fccab, type: 3}
+--- !u!1 &922624306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3577186068926138731, guid: 2d08885e6be40ee499bdfe50c38c2377,
+    type: 3}
+  m_PrefabInstance: {fileID: 80505560}
+  m_PrefabAsset: {fileID: 0}
+--- !u!45 &922624308
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922624306}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 860a66ca4259b384f9ec01b687f71c3c, type: 2}
 --- !u!1001 &948458639
 PrefabInstance:
   m_ObjectHideFlags: 0

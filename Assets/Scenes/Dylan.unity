@@ -1667,6 +1667,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1064428268}
   m_PrefabAsset: {fileID: 0}
+--- !u!45 &579992320
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579992319}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 860a66ca4259b384f9ec01b687f71c3c, type: 2}
 --- !u!114 &579992321
 MonoBehaviour:
   m_ObjectHideFlags: 0
