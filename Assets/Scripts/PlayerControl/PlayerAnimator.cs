@@ -20,5 +20,6 @@ public class PlayerAnimator : MonoBehaviour
     void Update()
     {
         _anim.SetFloat("speed", _pc.currentSpeed);
+        transform.rotation = Quaternion.LookRotation(_pc.previousDirection);
     }
 }

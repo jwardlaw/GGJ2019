@@ -1,80 +1,80 @@
 fileFormatVersion: 2
-guid: 5d06bee294c4214478ae09b974edd69b
+guid: 8dd0e8dca9db0ef46a30c01f7deae169
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: group1
-    100004: mixamorig:Head
-    100006: mixamorig:HeadTop_End
-    100008: mixamorig:Hips
-    100010: mixamorig:LeftArm
-    100012: mixamorig:LeftFoot
-    100014: mixamorig:LeftForeArm
-    100016: mixamorig:LeftHand
-    100018: mixamorig:LeftLeg
-    100020: mixamorig:LeftShoulder
-    100022: mixamorig:LeftToe_End
-    100024: mixamorig:LeftToeBase
-    100026: mixamorig:LeftUpLeg
-    100028: mixamorig:Neck
-    100030: mixamorig:RightArm
-    100032: mixamorig:RightFoot
-    100034: mixamorig:RightForeArm
-    100036: mixamorig:RightHand
-    100038: mixamorig:RightLeg
-    100040: mixamorig:RightShoulder
-    100042: mixamorig:RightToe_End
-    100044: mixamorig:RightToeBase
-    100046: mixamorig:RightUpLeg
-    100048: mixamorig:Spine
-    100050: mixamorig:Spine1
-    100052: mixamorig:Spine2
-    100054: pCube1
-    100056: pCube2
-    100058: pCube4
-    100060: pCube6
-    100062: pCube7
-    100064: pPipe1
-    100066: pSphere1
-    100068: pSphere2
-    100070: pSphere3
-    400000: //RootNode
-    400002: group1
-    400004: mixamorig:Head
-    400006: mixamorig:HeadTop_End
-    400008: mixamorig:Hips
-    400010: mixamorig:LeftArm
-    400012: mixamorig:LeftFoot
-    400014: mixamorig:LeftForeArm
-    400016: mixamorig:LeftHand
-    400018: mixamorig:LeftLeg
-    400020: mixamorig:LeftShoulder
-    400022: mixamorig:LeftToe_End
-    400024: mixamorig:LeftToeBase
-    400026: mixamorig:LeftUpLeg
-    400028: mixamorig:Neck
-    400030: mixamorig:RightArm
-    400032: mixamorig:RightFoot
-    400034: mixamorig:RightForeArm
-    400036: mixamorig:RightHand
-    400038: mixamorig:RightLeg
-    400040: mixamorig:RightShoulder
-    400042: mixamorig:RightToe_End
-    400044: mixamorig:RightToeBase
-    400046: mixamorig:RightUpLeg
-    400048: mixamorig:Spine
-    400050: mixamorig:Spine1
-    400052: mixamorig:Spine2
-    400054: pCube1
-    400056: pCube2
-    400058: pCube4
-    400060: pCube6
-    400062: pCube7
-    400064: pPipe1
-    400066: pSphere1
-    400068: pSphere2
-    400070: pSphere3
+    100000: group1
+    100002: mixamorig:Head
+    100004: mixamorig:HeadTop_End
+    100006: mixamorig:Hips
+    100008: mixamorig:LeftArm
+    100010: mixamorig:LeftFoot
+    100012: mixamorig:LeftForeArm
+    100014: mixamorig:LeftHand
+    100016: mixamorig:LeftLeg
+    100018: mixamorig:LeftShoulder
+    100020: mixamorig:LeftToe_End
+    100022: mixamorig:LeftToeBase
+    100024: mixamorig:LeftUpLeg
+    100026: mixamorig:Neck
+    100028: mixamorig:RightArm
+    100030: mixamorig:RightFoot
+    100032: mixamorig:RightForeArm
+    100034: mixamorig:RightHand
+    100036: mixamorig:RightLeg
+    100038: mixamorig:RightShoulder
+    100040: mixamorig:RightToe_End
+    100042: mixamorig:RightToeBase
+    100044: mixamorig:RightUpLeg
+    100046: mixamorig:Spine
+    100048: mixamorig:Spine1
+    100050: mixamorig:Spine2
+    100052: pCube1
+    100054: pCube2
+    100056: pCube4
+    100058: pCube6
+    100060: pCube7
+    100062: pPipe1
+    100064: pSphere1
+    100066: pSphere2
+    100068: pSphere3
+    100070: //RootNode
+    400000: group1
+    400002: mixamorig:Head
+    400004: mixamorig:HeadTop_End
+    400006: mixamorig:Hips
+    400008: mixamorig:LeftArm
+    400010: mixamorig:LeftFoot
+    400012: mixamorig:LeftForeArm
+    400014: mixamorig:LeftHand
+    400016: mixamorig:LeftLeg
+    400018: mixamorig:LeftShoulder
+    400020: mixamorig:LeftToe_End
+    400022: mixamorig:LeftToeBase
+    400024: mixamorig:LeftUpLeg
+    400026: mixamorig:Neck
+    400028: mixamorig:RightArm
+    400030: mixamorig:RightFoot
+    400032: mixamorig:RightForeArm
+    400034: mixamorig:RightHand
+    400036: mixamorig:RightLeg
+    400038: mixamorig:RightShoulder
+    400040: mixamorig:RightToe_End
+    400042: mixamorig:RightToeBase
+    400044: mixamorig:RightUpLeg
+    400046: mixamorig:Spine
+    400048: mixamorig:Spine1
+    400050: mixamorig:Spine2
+    400052: pCube1
+    400054: pCube2
+    400056: pCube4
+    400058: pCube6
+    400060: pCube7
+    400062: pPipe1
+    400064: pSphere1
+    400066: pSphere2
+    400068: pSphere3
+    400070: //RootNode
     2100000: lambert1
     4300000: pCube7
     4300002: pCube1
@@ -85,7 +85,7 @@ ModelImporter:
     4300012: pCube2
     4300014: pCube4
     4300016: pCube6
-    7400000: Running
+    7400000: running
     9500000: //RootNode
     13700000: pCube1
     13700002: pCube2
@@ -125,7 +125,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Running
+      name: running
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 17

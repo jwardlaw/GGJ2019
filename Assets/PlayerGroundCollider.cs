@@ -17,7 +17,7 @@ public class PlayerGroundCollider : MonoBehaviour
     {
         if (other.CompareTag("Ground"))
         {
-            controller.OnGroundEnter();
+            controller.OnGroundEnter(other);
         }
     }
 
@@ -25,7 +25,7 @@ public class PlayerGroundCollider : MonoBehaviour
     {
         if (other.CompareTag("Ground"))
         {
-            controller.OnGroundExit();
+            controller.OnGroundExit(other);
         }
     }
 }
