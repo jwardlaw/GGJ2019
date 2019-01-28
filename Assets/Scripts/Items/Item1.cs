@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class Item1 : MonoBehaviour
 {
-    public GameObject self;
+    public GameObject houseItem;
 
     void OnTriggerEnter(Collider other)
     {
-        HouseInventory.Picture1 = true;
         PlayerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         player.transform.position = Vector3.zero;
         player.OnPlatformReturn();
-        PlatformReturn.LastPlatformTouched = null;
-        self.GetComponent<Renderer>().enabled = false;
-        self.GetComponent<BoxCollider>().enabled = false;
-        transform.GetChild(0).gameObject.SetActive(true);
-        transform.GetChild(1).gameObject.SetActive(false);
+        houseItem.SetActive(true);
+        GameObject.Destroy(gameObject);
     }
 }
