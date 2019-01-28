@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18225,15 +18225,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1746380134}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
-  m_GameObject: {fileID: 537554204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7caf526c1af2141a30684410461be8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
->>>>>>> 48a9325c9cec24a86307d3f193750883bda43792
 --- !u!1001 &540647936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18302,11 +18293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04aae9b373f42b44faa72970ad5f94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   houseItem: {fileID: 866281845}
-=======
-  houseItem: {fileID: 542278152}
->>>>>>> 48a9325c9cec24a86307d3f193750883bda43792
 --- !u!1001 &545336966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34733,9 +34720,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cdd0b5d62220347b2df4b1ac4218c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  self: {fileID: 0}
 --- !u!65 &990241522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40432,13 +40416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04aae9b373f42b44faa72970ad5f94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   houseItem: {fileID: 733024167}
-=======
-  m_Name: 
-  m_EditorClassIdentifier: 
-  self: {fileID: 0}
->>>>>>> 48a9325c9cec24a86307d3f193750883bda43792
 --- !u!1 &1149539896
 GameObject:
   m_ObjectHideFlags: 0
@@ -58131,11 +58109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04aae9b373f42b44faa72970ad5f94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   houseItem: {fileID: 2125421670}
-=======
-  houseItem: {fileID: 1580306609}
->>>>>>> 48a9325c9cec24a86307d3f193750883bda43792
 --- !u!4 &1580306616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5896350390815063339, guid: c412fa42704146a4e80b1bb6cf5e5b5f,
@@ -62345,9 +62319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12bd78e21a324d46a88e862c4199a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  self: {fileID: 0}
 --- !u!65 &1654938247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -67915,11 +67886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04aae9b373f42b44faa72970ad5f94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
   houseItem: {fileID: 538643430}
-=======
-  houseItem: {fileID: 1780061170}
->>>>>>> 48a9325c9cec24a86307d3f193750883bda43792
 --- !u!1001 &1780598087
 PrefabInstance:
   m_ObjectHideFlags: 0
