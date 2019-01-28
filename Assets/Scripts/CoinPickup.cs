@@ -12,10 +12,11 @@ public class CoinPickup : MonoBehaviour
     {
         audio.Play();
         GlobalCoins.TotalCoins += 1;
-        Coin.GetComponent<Renderer>().enabled = false;
-        Coin.GetComponent<BoxCollider>().enabled = false;
-        transform.GetChild(0).gameObject.SetActive(true);
-        transform.GetChild(1).gameObject.SetActive(false);
+        Coin.SetActive(false);
+        //Coin.GetComponent<Renderer>().enabled = false;
+        //Coin.GetComponent<BoxCollider>().enabled = false;
+        transform.parent.GetChild(0).gameObject.SetActive(true);
+        transform.parent.GetChild(1).gameObject.SetActive(false);
         //this.gameObject.SetActive(false);
     }
 }
