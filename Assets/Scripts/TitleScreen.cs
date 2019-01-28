@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class TitleScreen : MonoBehaviour
 {
+    public bool showControls;
+    public GameObject controlImage;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        showControls = false;
     }
 
     // Update is called once per frame
@@ -16,7 +19,15 @@ public class TitleScreen : MonoBehaviour
     {
         if (Input.GetButtonDown("Submit") || Input.GetButtonDown("Pause"))
         {
-            SceneManager.LoadScene("Dylan");
+            if (!showControls)
+            {
+                controlImage.SetActive(true);
+                showControls = true;
+            }
+            else
+            {
+                SceneManager.LoadScene("Dylan");
+            }
         }
     }
 }
