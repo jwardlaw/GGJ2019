@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1609,6 +1609,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1929052287}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 56894660}
 --- !u!82 &56894660
@@ -3809,6 +3810,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 200035977}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 132135181}
 --- !u!82 &132135181
@@ -4558,6 +4560,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1425357462}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 142136880}
 --- !u!82 &142136880
@@ -4932,6 +4935,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1638864252}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 153022769}
 --- !u!82 &153022769
@@ -5750,6 +5754,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1223822990}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 173747184}
 --- !u!82 &173747184
@@ -7170,6 +7175,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1614832742}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 200134609}
 --- !u!82 &200134609
@@ -7641,6 +7647,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1276243357}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 213695855}
 --- !u!82 &213695855
@@ -8136,6 +8143,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 707133124}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 231719148}
 --- !u!82 &231719148
@@ -9114,6 +9122,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1783986699}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 246006127}
 --- !u!82 &246006127
@@ -9823,6 +9832,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 669280151}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 280166272}
 --- !u!82 &280166272
@@ -10033,6 +10043,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1076223231}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 281323871}
 --- !u!82 &281323871
@@ -12609,6 +12620,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1347655582}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 382474653}
 --- !u!82 &382474653
@@ -13375,12 +13387,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &405339057 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5550289758878057452, guid: e639f2b716cda1c47b253b75d18bd049,
-    type: 3}
-  m_PrefabInstance: {fileID: 1950380147}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &406127857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15679,6 +15685,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 681323179}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 492146137}
 --- !u!82 &492146137
@@ -16267,6 +16274,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1584047826}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 496625218}
 --- !u!82 &496625218
@@ -17374,6 +17382,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1544052127}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 529232275}
 --- !u!82 &529232275
@@ -17585,6 +17594,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 2060930563}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 530897443}
 --- !u!82 &530897443
@@ -17940,11 +17950,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7caf526c1af2141a30684410461be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Couch: {fileID: 1643193060}
-  Fridge: {fileID: 920392577}
-  Phone: {fileID: 1118332463}
-  Bear: {fileID: 405339057}
-  Books: {fileID: 589153377}
 --- !u!1001 &540647936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18010,9 +18015,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 542278152}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b12bd78e21a324d46a88e862c4199a48, type: 3}
+  m_Script: {fileID: 11500000, guid: 04aae9b373f42b44faa72970ad5f94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  houseItem: {fileID: 542278152}
 --- !u!1001 &545336966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18546,6 +18552,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1835882990}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 554279961}
 --- !u!82 &554279961
@@ -19413,6 +19420,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 670739613}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 581554976}
 --- !u!82 &581554976
@@ -19849,12 +19857,6 @@ Transform:
   m_Father: {fileID: 2055534871}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!1 &589153377 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7404712781471962927, guid: e639f2b716cda1c47b253b75d18bd049,
-    type: 3}
-  m_PrefabInstance: {fileID: 1950380147}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &589787778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20312,6 +20314,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 29225677}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 606306063}
 --- !u!82 &606306063
@@ -21980,6 +21983,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 961726470}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 660625219}
 --- !u!82 &660625219
@@ -23293,6 +23297,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1230975635}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 683189840}
 --- !u!82 &683189840
@@ -24268,6 +24273,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1308942060}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 715634393}
 --- !u!82 &715634393
@@ -24946,6 +24952,7 @@ MonoBehaviour:
   _fadeintime: 0.2
   _model: {fileID: 1313019176}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 740806662}
 --- !u!82 &740806662
@@ -25156,6 +25163,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 751844638}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 741679847}
 --- !u!82 &741679847
@@ -25700,6 +25708,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 124214806}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 754008313}
 --- !u!82 &754008313
@@ -26309,6 +26318,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1026878853}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 761290738}
 --- !u!82 &761290738
@@ -29124,6 +29134,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 53033542}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 863324972}
 --- !u!82 &863324972
@@ -29334,6 +29345,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1221237691}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 872827939}
 --- !u!82 &872827939
@@ -30037,6 +30049,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1770724790}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 882566487}
 --- !u!82 &882566487
@@ -30366,6 +30379,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 711167196}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 890179481}
 --- !u!82 &890179481
@@ -31078,6 +31092,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1636144714}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 910132168}
 --- !u!82 &910132168
@@ -31590,12 +31605,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 959ce9996bc68d94ca68a442d9f4497c, type: 3}
---- !u!1 &920392577 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8132349514187078058, guid: e639f2b716cda1c47b253b75d18bd049,
-    type: 3}
-  m_PrefabInstance: {fileID: 1950380147}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &923453254
 GameObject:
   m_ObjectHideFlags: 0
@@ -32286,6 +32295,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1677204420}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 949111707}
 --- !u!82 &949111707
@@ -32838,6 +32848,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1851188706}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 957164634}
 --- !u!82 &957164634
@@ -33410,6 +33421,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1731764997}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 967579247}
 --- !u!82 &967579247
@@ -34121,6 +34133,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89cdd0b5d62220347b2df4b1ac4218c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 0}
 --- !u!65 &990241522
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36718,6 +36733,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 788586177}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1067760450}
 --- !u!82 &1067760450
@@ -37267,6 +37283,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1643066682}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1079385162}
 --- !u!82 &1079385162
@@ -37627,6 +37644,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1228540367}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1083683163}
 --- !u!82 &1083683163
@@ -38802,12 +38820,6 @@ Transform:
   m_Father: {fileID: 1883234796}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1118332463 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2651378153173982122, guid: e639f2b716cda1c47b253b75d18bd049,
-    type: 3}
-  m_PrefabInstance: {fileID: 1950380147}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1122067775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39595,6 +39607,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9836eb829fc3e5d48b2a9c82d1a32e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 0}
 --- !u!1 &1149539896
 GameObject:
   m_ObjectHideFlags: 0
@@ -39681,6 +39696,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1864992203}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1149539899}
 --- !u!82 &1149539899
@@ -40120,6 +40136,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 2056402621}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1155500470}
 --- !u!82 &1155500470
@@ -40525,6 +40542,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 619133591}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1162521653}
 --- !u!82 &1162521653
@@ -40736,6 +40754,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 887375832}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1164420681}
 --- !u!82 &1164420681
@@ -40946,6 +40965,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 2141969815}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1165944891}
 --- !u!82 &1165944891
@@ -41157,6 +41177,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 828895826}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1172033213}
 --- !u!82 &1172033213
@@ -41595,6 +41616,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1673555907}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1181883663}
 --- !u!82 &1181883663
@@ -43381,6 +43403,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1008069846}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1223345970}
 --- !u!82 &1223345970
@@ -44951,6 +44974,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 131040933}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1253592694}
 --- !u!82 &1253592694
@@ -45162,6 +45186,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1210833455}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1257319445}
 --- !u!82 &1257319445
@@ -45672,6 +45697,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1140863287}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1269441964}
 --- !u!82 &1269441964
@@ -46135,6 +46161,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 632529590}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1278256112}
 --- !u!82 &1278256112
@@ -46496,6 +46523,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 103889189}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1290699229}
 --- !u!82 &1290699229
@@ -47388,6 +47416,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1683843859}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1311505297}
 --- !u!82 &1311505297
@@ -48252,6 +48281,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 267750203}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1342691143}
 --- !u!82 &1342691143
@@ -48789,6 +48819,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 777863279}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1351582003}
 --- !u!82 &1351582003
@@ -49254,6 +49285,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1394195403}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1358835397}
 --- !u!82 &1358835397
@@ -51434,6 +51466,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1020844611}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1421868882}
 --- !u!82 &1421868882
@@ -52085,6 +52118,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1701084506}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1435429946}
 --- !u!82 &1435429946
@@ -52415,6 +52449,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1372101530}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1443685981}
 --- !u!82 &1443685981
@@ -53130,6 +53165,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 93662956}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1461503366}
 --- !u!82 &1461503366
@@ -54383,6 +54419,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1296764936}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1509860454}
 --- !u!82 &1509860454
@@ -55351,6 +55388,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1808119029}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1543401806}
 --- !u!82 &1543401806
@@ -56058,6 +56096,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1539370842}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1559328566}
 --- !u!82 &1559328566
@@ -56665,6 +56704,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 294404380}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1566774807}
 --- !u!82 &1566774807
@@ -57063,9 +57103,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1580306609}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60f88dfd32a06ec419dd32ad5c208a61, type: 3}
+  m_Script: {fileID: 11500000, guid: 04aae9b373f42b44faa72970ad5f94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  houseItem: {fileID: 1580306609}
 --- !u!4 &1580306616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5896350390815063339, guid: c412fa42704146a4e80b1bb6cf5e5b5f,
@@ -57431,6 +57472,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1903918082}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1585113880}
 --- !u!82 &1585113880
@@ -58491,6 +58533,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1649311822}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1607476683}
 --- !u!82 &1607476683
@@ -59149,6 +59192,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1019212427}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1617399565}
 --- !u!82 &1617399565
@@ -59511,6 +59555,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 960961452}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1626899345}
 --- !u!82 &1626899345
@@ -60331,12 +60376,6 @@ Transform:
   m_Father: {fileID: 1079385160}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!1 &1643193060 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2372051229908727807, guid: e639f2b716cda1c47b253b75d18bd049,
-    type: 3}
-  m_PrefabInstance: {fileID: 1950380147}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1643851300
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60750,6 +60789,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1957572039}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1650394767}
 --- !u!82 &1650394767
@@ -61015,6 +61055,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 843742962}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1653208263}
 --- !u!82 &1653208263
@@ -61275,6 +61316,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b12bd78e21a324d46a88e862c4199a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  self: {fileID: 0}
 --- !u!65 &1654938247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62361,6 +62405,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1455944693}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1679215469}
 --- !u!82 &1679215469
@@ -62630,6 +62675,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1227503781}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1681082237}
 --- !u!82 &1681082237
@@ -63511,6 +63557,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 2009727633}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1703497589}
 --- !u!82 &1703497589
@@ -63930,6 +63977,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 137410661}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1714988298}
 --- !u!82 &1714988298
@@ -64874,6 +64922,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 585130508}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1736109094}
 --- !u!82 &1736109094
@@ -65234,6 +65283,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1773533585}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1743353388}
 --- !u!82 &1743353388
@@ -66588,9 +66638,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1780061170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89cdd0b5d62220347b2df4b1ac4218c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 04aae9b373f42b44faa72970ad5f94ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  houseItem: {fileID: 1780061170}
 --- !u!1001 &1780598087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67301,6 +67352,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 606944619}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1800054106}
 --- !u!82 &1800054106
@@ -68274,6 +68326,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 11723914}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1831977969}
 --- !u!82 &1831977969
@@ -69084,6 +69137,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 2041232658}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1849557107}
 --- !u!82 &1849557107
@@ -69635,6 +69689,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1559485340}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1864991877}
 --- !u!82 &1864991877
@@ -70028,6 +70083,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1979584626}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1866614152}
 --- !u!82 &1866614152
@@ -71672,6 +71728,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 164303120}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1906119503}
 --- !u!82 &1906119503
@@ -72752,6 +72809,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1797110815}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1929952359}
 --- !u!82 &1929952359
@@ -73706,6 +73764,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 410121009}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1968252872}
 --- !u!82 &1968252872
@@ -73992,6 +74051,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 598556411}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 1969941589}
 --- !u!82 &1969941589
@@ -75592,6 +75652,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 124019656}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 2019400432}
 --- !u!82 &2019400432
@@ -76510,6 +76571,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1994395673}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 2051788870}
 --- !u!82 &2051788870
@@ -76721,6 +76783,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 586638131}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 2055534873}
 --- !u!82 &2055534873
@@ -77541,6 +77604,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 511537445}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 2066437157}
 --- !u!82 &2066437157
@@ -77902,6 +77966,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 176263118}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 2070881164}
 --- !u!82 &2070881164
@@ -78762,6 +78827,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1991988218}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 2099019777}
 --- !u!82 &2099019777
@@ -79354,6 +79420,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 1044431109}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 2113141614}
 --- !u!82 &2113141614
@@ -79865,6 +79932,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 367180047}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 2119855350}
 --- !u!82 &2119855350
@@ -81270,6 +81338,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 6661321156225604496}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 6285240013817608426}
 --- !u!23 &535250004909023656
@@ -85033,6 +85102,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 4050317135954111362}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 7239928730023225932}
 --- !u!1001 &7011620092014129686
@@ -85640,6 +85710,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 9166187528120763448}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 3766196680390469059}
 --- !u!114 &8321782856609279987
@@ -85753,6 +85824,7 @@ MonoBehaviour:
   _fadeintime: 0.5
   _model: {fileID: 8461319278905488886}
   triggered: 0
+  originalColor: {r: 0, g: 0, b: 0, a: 0}
   platformSound: {fileID: 8300000, guid: 80e397195ea2940b69ee7bdbded856a5, type: 3}
   audio: {fileID: 5114034852606165337}
 --- !u!33 &8671094568285787024
